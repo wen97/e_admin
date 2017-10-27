@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>e债天下控制平台</title>
+    
+    <link href="css/bootstrap_Grid_system.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+</head>
+
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
+    <div id="wrapper">
+        <!--顶部导航开始-->
+        <div class="navTop">
+            <span class="fn24">e债天下控制平台</span>
+            <div class="navTip">
+                <i class="indexIco icoSurvey"></i>
+                <span>概况</span>
+            </div>
+            <div class="navTopRight">
+                <div class="navSearch inlineB">
+                    <i class="indexIco icoSearch"></i>
+                    <input class="iptSearch" type="text" placeholder="会员账号"/>
+                </div>
+                <div class="mgl50 inlineB">
+                    <i class="indexIco icoCustomer"></i>
+                    <a>联系我们</a>
+                </div>
+                <div class="mgl30 inlineB">
+                    <i class="indexIco icoMsg"></i>
+                    <a>通知(12)</a>
+                </div>
+                <div class="mgl30 inlineB">
+                    <i class="indexIco icoUser"></i>
+                    <a>alds</a>
+                </div>
+                <div class="mgl30 inlineB">
+                    <i class="indexIco icoLogout"></i>
+                    <a>退出</a>
+                </div>
+            </div>
+        </div>
+        <!--顶部导航结束-->
+
+        <!--左侧导航开始-->
+        <nav class="navbar-default navbar-static-side borderTop">
+            <ul class="navbar">
+                <li class="nav-header">
+                    <img src="img/userImg.png" alet="用户头像" style="width:80%;margin-top:20px;">
+                    <div class="userSpan">admin</div>
+                </li>
+                
+                <li class="navItem navItemActive" data-url="index_main">
+                    <i class="indexIco icoSurvey"></i>
+                    <span class="nav-label">概况</span>
+                </li>
+                <li class="navItem" data-url="debt_management">
+                    <i class="indexIco icoDebt"></i>
+                    <span class="nav-label">债事</span>
+                </li>
+                <li class="navItem" data-url="supply_merchantList">
+                    <i class="indexIco icoSupply"></i> 
+                    <span class="nav-label">供应</span>
+                </li>
+                <li class="navItem" data-url="finance_Platform">
+                    <i class="indexIco icoFinance"></i>
+                    <span class="nav-label">财务</span>
+                </li>
+                <li class="navItem" data-url="operate_Noticepush">
+                    <i class="indexIco icoOperate"></i>
+                    <span class="nav-label">运营</span>
+                <li class="navItem" data-url="authority_Area">
+                    <i class="indexIco icoJurisdiction"></i>
+                    <span class="nav-label">权限</span>      
+                </li>
+                <li class="navItem" data-url="user_Userslist">
+                    <i class="indexIco icoUsers"></i>
+                    <span class="nav-label">用户</span>
+                </li>
+                <li class="navItem">
+                    <i class="indexIco icoData"></i>
+                    <span class="nav-label">数据</span>
+                </li>
+                <li class="navItem">
+                    <i class="indexIco icoSystem"></i>
+                    <span class="nav-label">系统</span>
+                </li>
+            </ul>
+        </nav>
+        <div class="menuCont">
+            <div>
+                <ul class="menucontlist">
+                    <li class="contlistHead">
+                        <div class="contlistWarp">债事ZS</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">债行</div>
+                    </li>
+                    <li class="contlistItem contlistItemActive" data-url="debt_management">
+                        <div class="contlistWarp">债行管理</div>
+                    </li>
+                    <li class="contlistItem" data-url="debt_quota">
+                        <div class="contlistWarp">债行配额</div>
+                    </li>
+                    <li class="contlistItem" data-url="debt_createDebt">
+                        <div class="contlistWarp">创建债行</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">债事</div>
+                    </li>
+                    <li class="contlistItem" data-url="debt_claimList">
+                        <div class="contlistWarp">债权列表</div>
+                    </li>
+                    <li class="contlistItem">
+                        <div class="contlistWarp">债务列表</div>
+                    </li>
+                    <li class="contlistItem" data-url="debt_related">
+                        <div class="contlistWarp">债事关联</div>
+                    </li>
+                    <li class="contlistItem" data-url="debt_assetsList">
+                        <div class="contlistWarp">资产列表</div>
+                    </li>
+                    <li class="contlistItem" data-url="debt_examine">
+                        <div class="contlistWarp">债事审核</div>
+                    </li>
+                </ul>
+                <ul class="menucontlist">
+                    <li class="contlistHead">
+                        <div class="contlistWarp">供应GY</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">商家</div>
+                    </li>
+                    <li class="contlistItem contlistItemActive" data-url="supply_merchantList">
+                        <div class="contlistWarp">商家列表</div>
+                    </li>
+                    <li class="contlistItem" data-url="supply_createAccount">
+                        <div class="contlistWarp">创建账户</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">商品</div>
+                    </li>
+                    <li class="contlistItem" data-url="supply_goodsManagement">
+                        <div class="contlistWarp">商品管理</div>
+                    </li>
+                    <li class="contlistItem" data-url="supply_goodsRelease">
+                        <div class="contlistWarp">商品发布</div>
+                    </li>
+                    <li class="contlistItem" data-url="supply_classification">
+                        <div class="contlistWarp">类目分类</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">用户评论</div>
+                    </li>
+                    <li class="contlistItem" data-url="supply_movableCommodity">
+                        <div class="contlistWarp">活动商品</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">订单</div>
+                    </li>
+                    <li class="contlistItem" data-url="supply_tradingOrder">
+                        <div class="contlistWarp">交易订单</div>
+                    </li>
+                    <li class="contlistItem" data-url="supply_deliverGoods">
+                        <div class="contlistWarp">待发货订单</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">售后</div>
+                    </li>
+                    <li class="contlistItem" data-url="supply_returnGoods">
+                        <div class="contlistWarp">退/换订单</div>
+                    </li>
+                </ul>
+                <ul class="menucontlist">
+                    <li class="contlistHead">
+                        <div class="contlistWarp">财务CW</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">总额</div>
+                    </li>
+                    <li class="contlistItem contlistItemActive" data-url="finance_Platform">
+                        <div class="contlistWarp">平台总额</div>
+                    </li>
+                    <li class="contlistItem" data-url="finance_Edebt">
+                        <div class="contlistWarp">E债总额</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">管理</div>
+                    </li>
+                    <li class="contlistItem" data-url="finance_Transferaccounts">
+                        <div class="contlistWarp">转账/充值</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">预设额度</div>
+                    </li>
+                    <li class="contlistItem" data-url="finance_Withdrawals">
+                        <div class="contlistWarp">提现/账户</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">记录</div>
+                    </li>
+                    <li class="contlistItem" data-url="finance_Flowdetail">
+                        <div class="contlistWarp">流水明细</div>
+                    </li>
+                    <li class="contlistItem" data-url="finance_Orderdetails">
+                        <div class="contlistWarp">订单明细</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">审核</div>
+                    </li>
+                    <li class="contlistItem" data-url="finance_Userwithdraw">
+                        <div class="contlistWarp">用户提现</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">查询</div>
+                    </li>
+                    <li class="contlistItem" data-url="finance_Userquery">
+                        <div class="contlistWarp">用户查询</div>
+                    </li>
+                </ul>
+                <ul class="menucontlist">
+                    <li class="contlistHead">
+                        <div class="contlistWarp">运营YY</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">站内消息</div>
+                    </li>
+                    <li class="contlistItem contlistItemActive" data-url="operate_Noticepush">
+                        <div class="contlistWarp">公告推送</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">活动推送</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">优惠券</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">优惠券查询</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">优惠券列表</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">发现</div>
+                    </li>
+                    <li class="contlistItem" data-url="operate_textList">
+                        <div class="contlistWarp">图文列表</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">邀请</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">邀请查询</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">活动</div>
+                    </li>
+                    <li class="contlistItem" data-url="operate_Commodityaudit">
+                        <div class="contlistWarp">商品审核</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">帮助</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">常见帮助</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">意见反馈</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">广告</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">广告列表</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">图文管理</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">备案中心</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">债事委托</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">加盟邀约</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">安全保障</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">服务号</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">订阅号</div>
+                    </li>
+                    <li class="contlistItem" data-url="">
+                        <div class="contlistWarp">供应商</div>
+                    </li>
+                </ul>
+                <ul class="menucontlist">
+                    <li class="contlistHead">
+                        <div class="contlistWarp">权限QX</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">债行</div>
+                    </li>
+                    <li class="contlistItem contlistItemActive" data-url="authority_Area">
+                        <div class="contlistWarp">地区</div>
+                    </li>
+                    <li class="contlistItem" data-url="authority_Users">
+                        <div class="contlistWarp">用户</div>
+                    </li>
+                </ul>
+                <ul class="menucontlist">
+                    <li class="contlistHead">
+                        <div class="contlistWarp">用户YH</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">用户</div>
+                    </li>
+                    <li class="contlistItem contlistItemActive" data-url="user_Userslist">
+                        <div class="contlistWarp">用户列表</div>
+                    </li>
+                    <li class="contlistUL">
+                        <img src="img/menucontDrop.png" class="menucontDrop">
+                        <div class="contlistWarp">资质</div>
+                    </li>
+                    <li class="contlistItem" data-url="user_Certification">
+                        <div class="contlistWarp">实名认证</div>
+                    </li>
+                    <li class="contlistItem" data-url="user_Enterprise">
+                        <div class="contlistWarp">企业认证</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--左侧导航结束-->
+        <!--右侧部分开始-->
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row J_mainContent" id="content-main">
+                <iframe id="J_iframe" width="100%" height="100%" src="index_main" frameborder="0" data-id="index_main" seamless></iframe>
+            </div>
+        </div>
+        <!--右侧部分结束-->
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>

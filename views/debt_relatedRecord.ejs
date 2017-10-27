@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>债事关联-返款记录</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="claimdetailCont">
+            <div class="claimdetailHead">
+                <a href="debt_related" class="colbebA">债事关联&gt;</a>
+                <span class="col000">返款记录</span>
+                <a class="fr colfcbA fn16">导出电子版</a>
+            </div>
+            <div class="claimdetailMain">
+                <div class="claimdetailMainHead">
+                    资金统计
+                </div>
+                <div class="capitalcontWarp">
+                    <div class="capitalcont mgl7">
+                        <img src="img/balancePng.png" class="balancePng" />
+                        <div class="inlineB mgl10">
+                            <p class="colf97 mgl10 mgt10">3020.00</p>
+                            <p class="mgl10 mgt10 fn16">资产总额（币）</p>
+                        </div>
+                    </div>
+                    <div class="capitalcont">
+                        <img src="img/currencyPng.png" class="balancePng" />
+                        <div class="inlineB mgl10">
+                            <p class="colf97 mgl10 mgt10">3020.00</p>
+                            <p class="mgl10 mgt10 fn16">已还款（币）</p>
+                        </div>
+                    </div>
+                    <div class="capitalcont">
+                        <img src="img/ensurePng.png" class="balancePng" />
+                        <div class="inlineB mgl10">
+                            <p class="colf97 mgl10 mgt10">3020.00</p>
+                            <p class="mgl10 mgt10 fn16">剩还款（币）</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="claimdetailMainHead"></div>
+                <div class="claimdetailMainHead borderNone">
+                    记录明细
+                </div>
+                <div class="recordTableWrap">
+                    <div class="recordTableCont">
+                        <table class="relatedrecordTable" border="0" cellspacing="1" id="reportTable1">
+                    
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script>
+        //手动制造30条数据
+        var datas  = [];
+        for(var i=0;i<300;i++){
+            datas[i]={"b":"Q158"+i,"c":"2017/07/25 14:00:00","d":"2585"+i,"e":"啦啦啦"}
+        }
+
+        $('#reportTable1').bootstrapTable({
+            method: 'get',
+            cache: false,
+            striped: false,
+            pagination: true,
+            pageSize: 15,
+            height:640,
+            pageNumber:1,
+            pageList: [15],
+            showColumns: false,
+            showRefresh: false,
+            showExport: false,
+            exportTypes: ['csv','txt','xml'],
+            search: false,
+            clickToSelect: false,
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+            columns: 
+            [
+                {field:"a",title:"排序",align:"center",valign:"middle",
+                    formatter:function(value,row,index){
+                       var a ='<span>'+index+'</span>';
+                       return a;
+                    }
+                },
+                {field:"b",title:"债事ID",align:"center",valign:"middle"},
+                {field:"c",title:"时间",align:"center",valign:"middle"},
+                {field:"d",title:"余额",align:"center",valign:"middle"},
+                {field:"e",title:"关联债务人",align:"center",valign:"middle"}
+            ],
+            data:datas,
+        });	
+    </script>
+</body>
+
+</html>

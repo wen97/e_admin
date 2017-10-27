@@ -1,0 +1,2455 @@
+/*index.html*/
+.navTop{
+    width:100%;
+    min-width:1200px;
+    height:70px;
+    line-height:70px;
+    background-color:#222d31;
+    position:fixed;
+    top:0px;
+    color:#fff;
+    font-size:16px;
+    padding:0 40px 0 30px;
+}
+.bg222{
+    background-color:#222d31;
+}
+.fn24{
+    font-size:24px;
+}
+.indexIco{
+    display: inline-block;
+    width:26px;
+    height:26px;
+    background-image:url(../img/indexIcon.png);
+    vertical-align:middle;
+    margin-right:12px;
+}
+.navTip{
+    width:140px;
+    height:20px;
+    line-height:20px;
+    display:inline-block;
+    text-align: center;
+    border-left:1px solid #fff;
+    margin-left:40px;
+    position: absolute;
+    top:25px;
+}
+.navTopRight a{
+    color:#fff;
+    font-size:14px;
+}
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color:#fff;
+}
+.navTopRight{
+    float:right;
+    height:50px;
+    line-height:50px;
+    margin-top:10px;
+}
+.navSearch{
+    display:inline-block;
+    width:250px;
+    height:40px;
+    line-height:40px;
+    border:1px solid #60686c;
+    border-radius:40px;
+    vertical-align:middle;
+}
+.icoSearch{
+    background-position:-7px -334px;
+    vertical-align:middle;
+    margin-left:25px; 
+}
+.icoCustomer{
+    background-position:-8px -367px;
+    margin-right:5px;
+}
+.icoMsg{
+    width:28px;
+    background-position:-5px -400px;
+    margin-right:5px;
+}
+.icoUser{
+    background-position:-5px -427px;
+    margin-right:5px;
+}
+.icoLogout{
+    background-position:-5px -463px;
+    margin-right:5px;
+}
+.iptSearch{
+    width: 60%;
+    height: 24px;
+    line-height: 24px;
+    background-color: #222d31;
+    border: none;
+    font-size: 14px;
+    color: #fff;  
+}
+.navbar li{
+    text-align:center;
+    border-bottom:1px solid #3b5056;
+}
+.userSpan{
+    font-size:16px;
+    color:#fff;
+    margin-top:20px;
+}
+.navItem{
+    height:55px;
+    line-height:55px;
+    font-size:16px;
+    color:#fff;
+    cursor: pointer;
+}
+.navItem a:hover{
+    text-decoration: none;
+    color:#fff;
+}
+.navItemActive{
+    background-color:#3b5056;
+    border-left:4px solid #01bef8;
+
+}
+.navItemActive i{
+    margin-left:-4px;
+}
+.navTip .nav-label{
+    display: inline !important;;
+}
+body.mini-navbar .navbar-static-side .indexIco{
+    display:none;
+}
+.menuCont{
+    width:185px;
+    height:100%;
+    background-color:#495e66;
+    color:#fff;
+    font-size:16px;
+    position:fixed;
+    left:184px;
+    top:70px;
+    text-align:left;
+    display:none;
+    overflow:auto;
+}
+.menucontlist{
+    display:none;
+    margin-bottom:100px;
+}
+.contlistHead{
+    height:30px;
+    line-height: 30px;
+    border-bottom:1px solid #52676f;
+}
+.contlistUL{
+    height:46px;
+    line-height: 46px;
+    border-bottom:1px solid #52676f;
+    position:relative;
+}
+.contlistWarp{
+    margin-left:28.73%;
+}
+.dispBlock{
+    display:block;
+}
+.contlistItem{
+    height:46px;
+    line-height:46px;
+    border-bottom:1px solid #52676f;
+    font-size:14px;
+    cursor: pointer;
+}
+.contlistItemActive{
+    background-color:#3b5056;
+    border-left:2px solid #01bef8;
+}
+.contlistItemActive .contlistWarp{
+    margin-left:28.65%;
+}
+
+.menucontDrop{
+    position: absolute;
+    top:20px;
+    left:13.5px;
+}
+.mini-navbar .menuCont{
+    left:70px;
+    width:120px;
+}
+.icoSurvey{
+    background-position:-8px -10px; 
+}
+.icoDebt{
+    background-position:-8px -46px; 
+}
+.icoSupply{
+    background-position:-6px -80px; 
+}
+.icoFinance{
+    background-position:-5px -116px; 
+}
+.icoOperate{
+    background-position:-5px -151px;
+}
+.icoJurisdiction{
+    background-position:-5px -192px; 
+}
+.icoData{
+    background-position:-5px -230px; 
+}
+.icoUsers{
+    background-position:-8px -262px; 
+}
+.icoSystem{
+    background-position:-8px -298px; 
+}
+/*index.html*/
+
+
+/*index_main.html*/
+.wrapper{
+    padding-left:60px;
+    padding-right:60px;
+}
+.capitalcontWarp{
+    width:82%;
+    margin:0 auto;
+    min-width:1030px;
+}
+.capitalContent{
+    background-color:#fff;
+    border-radius:5px;
+    padding-bottom:15px;
+    min-width:1030px;
+    padding-top:10px;
+}
+.indexMainTit{
+    color:#525c66;
+    font-size:18px;
+    margin-left:10px; 
+}
+.colf97{
+    color:#f97d2a;
+}
+.capitalcont{
+    width:220px;
+    height:80px;
+    font-size:20px;
+    margin-top:25px;
+    margin-left:10.6%;
+    display:inline-block;
+}
+.balancePng{
+    width:78px;
+    height:78px;
+    float:left;
+}
+.OrdercontWarp{
+    width:90%;
+    margin:40px auto 0;
+}
+.OrdercontItem{
+    display:inline-block;
+    width:10.9%;
+    font-size:18px;
+    color:#666666;
+    margin-right:6.36%;
+    text-align:center;
+}
+.dateCont{
+    width:210px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #d0d0d0;
+    border-radius:4px;
+    display:inline-block;
+    float:right;
+    margin-right:10px;
+    overflow:hidden;
+    box-sizing:border-box;
+}
+.regionBtncont{
+    width:142px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #d0d0d0;
+    border-radius:4px;
+    display:inline-block;
+    float:right;
+    margin-right:10px;
+    overflow:hidden;
+    box-sizing:border-box;
+}
+.onlineChose,.debtChose,.regionChose{
+    display: inline-block;
+    width:68px;
+    color:#404343;
+    text-align:center;
+    float:left;
+}
+.onlineChose:hover,.debtChose:hover,.regionChose:hover{
+    color:#404343;
+}
+.borderRightd0d{
+    border-right:1px solid #d0d0d0;
+}
+.dateActive{
+    background-color:#eeeeee;
+}
+.width72{
+    width:72px;
+}
+.onlineDate{
+    width:100%;
+    height:340px;
+}
+.authCont{
+    width:36.36%;
+    float:left;
+    height:510px;
+    border-radius:5px;
+    background-color:#fff;
+}
+.bgf0f{
+    background-color:#f0f3f4
+}
+.col798{
+    color:#798089;
+}
+.authChart{
+    width:220px;
+    height:220px;
+    margin:55px auto 25px;
+}
+.authDescont{
+    width:50%;
+    margin:0 auto;
+    color:#556376;
+    font-size:16px;
+}
+.authDesItem{
+    height:24px;
+    line-height:24px;
+    margin-top:25px;
+}
+.authDesItem span{
+    vertical-align:middle;
+    
+}
+.authBgff7{
+    width:22px;
+    height:22px;
+    background-color:#ff784f;
+    margin-right:40px;
+}
+.authBgccc{
+    width:22px;
+    height:22px;
+    background-color:#cccccc;
+    margin-right:40px;
+}
+.authBgfe5{
+    width:22px;
+    height:22px;
+    background-color:#fe5083;
+    margin-right:40px;
+}
+.debtCont{
+    width:62.4%;
+    height:510px;
+    border-radius:5px;
+    background-color:#fff;
+    float:right;
+}
+.DebtDatechart{
+    width:100%;
+    height: 380px;
+    margin-top:60px;    
+}
+.newuserCont{
+    width:65.17%;
+    height:480px;
+    border-radius:5px;
+    background-color:#fff;
+}
+.newUserchart{
+    width:100%;
+    height:390px;
+    margin-top:20px;
+}
+.regionCont{
+    width:33.92%;
+    height:480px;
+    border-radius:5px;
+    background-color:#fff;
+    float:right;
+}
+
+/*index_main.html*/
+
+
+/*debt_management.html*/
+.debtManagement{
+    background-color:#fff;
+    border-radius:5px;
+    min-width:1040px;
+    border:1px solid #dcdcdc;
+}
+.debtManagementHead{
+    width:100%;
+    height:50px;
+    line-height:50px;
+    border-bottom:1px solid #dcdcdc;
+}
+.debtManagementTitle{
+    width:110px;
+    height:50px;
+    line-height:50px;
+    color:#bebebe;
+    font-size:16px;
+    text-align:center;
+    display:inline-block;
+    cursor: pointer;
+}
+.TitleActive{
+    border-bottom:2px solid #526073;
+    color:#4c5e70;
+}
+.debtManagementNav{
+    margin:20px auto 20px;
+    line-height:32px;
+    width: 1000px
+}
+.debtManagementExport{
+    width:100px;
+    height:25px;
+    line-height:25px;
+    text-align:center;
+    background-color:#00c2f3;
+    color:#fff;
+    cursor:pointer;
+    vertical-align:middle;
+}
+.debtManagementSelect{
+    width:134px;
+    height:32px;
+    line-height:32px;
+    padding-left:6px;
+    margin-left:10px;
+    border:1px solid #dcdcdc;
+    vertical-align:middle;
+}
+.width160{
+    width:160px;
+}
+.selectDrop{
+    position:relative;;
+    right:30px;
+}
+.managementDate{
+    width:180px;
+    height:32px;
+    line-height:32px;
+    padding-left:10px;
+    margin-left:10px;
+    border:1px solid #dcdcdc;
+    vertical-align:middle;
+ 
+}
+
+.debtManagementSearch{
+    width:92px;
+    height:25px;
+    line-height:25px;
+    text-align:center;
+    background-color:#00c2f3;
+    color:#fff;
+    cursor:pointer;
+    margin-top:5px;
+}
+.ManagementTableWarp{
+    width:100%;
+    min-height:600px;
+    font-size:14px;
+    position:relative;
+}
+.deleteCont{
+    position: absolute;
+    bottom: 40px;
+    left: 17px;
+    z-index:999;
+    line-height:20px;
+}
+.deleteBtn{
+    cursor:pointer;
+}
+.debtManagementTable{
+    width:100%;
+    text-align:center;
+}
+.debtManagementTable tr,.relatedrecordTable tr{
+    width:100%;
+    height:30px;
+    line-height:30px;
+}
+.debtManagementTable tbody tr:nth-child(odd){
+    background-color:#f4f4f4;
+}
+.debtManagementTable tr td a{
+    color:#676a6c;
+}
+.debtManagementTable tr td a:hover{
+    color:#000;
+}
+.debtManagementTable thead,.relatedrecordTable thead{
+    background-color:#495e66;
+    color:#fff;
+}
+.debtManagementTableHead{
+    background-color:#495e66;
+    color:#fff; 
+}
+.tableCheckbox,.allCheck{
+    width:18px;
+    height:18px;
+    border:1px solid #dcdcdc;
+    vertical-align:middle;
+}
+.managementDelate{
+    width:58px;
+    height:22px;
+    line-height:22px;
+    display:inline-block;
+    background-color:#00c3f5;
+    text-align:center;
+    color:#fff;
+    font-size:14px;
+    margin-left:18px;
+    border-radius:2px;
+}
+
+.col00c{
+    color:#00c3f5;
+}
+.delCont,.delselectCont{
+    width:378px;
+    height:249px;
+    border-radius:6px;
+    background:#fff;
+    display:none;
+    position: absolute;
+    z-index:9999;
+}
+.delContHead{
+    width:100%;
+    height:48px;
+    line-height:48px;
+    border-top-right-radius:6px;
+    border-top-left-radius:6px;
+    background-color:#04c1f1;
+    color:#fff;
+    font-size:20px;
+    position: relative;
+}
+.delNotice{
+    font-size:20px;
+    text-align:center;
+    margin-top:65px;
+}
+.delBtnwarp{
+    width:320px;
+    height:40px;
+    margin:45px auto 0px;
+}
+.delCancel{
+    display:inline-block;
+    width:148px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    border-radius:5px;
+    background-color:#0ab2ec;
+    color:#fff;
+    font-size:16px;
+}
+.delSure,.selectDelate{
+    display:inline-block;
+    width:148px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    border-radius:5px;
+    background-color:#0392e7;
+    color:#fff;
+    font-size:16px;
+    float: right;
+}
+
+/*debt_management.html*/
+
+/*debt_quota.html*/
+.accountBtn{
+    color:#f3004a!important;
+}
+.accountBtn:hover{
+    color:#f3004a!important;
+}
+.accountCont{
+    width:735px;
+    height:400px;
+    position: absolute;
+    background-color:#fff;
+    box-sizing:border-box;
+    border-radius:5px;
+    display:none;
+    z-index:9999;
+}
+.accountContHead{
+    width:100%;
+    height:42px;
+    line-height:42px;
+    color:#fff;
+    font-size:20px;
+    text-align:center;
+    background-color:#04c1f1;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+.accountContClose{
+    position: absolute;
+    right: 15px;
+    top:12px;
+    cursor: pointer;
+}
+.accountContMain{
+    width:680px;
+    margin:10px auto 10px;
+    height:160px;
+}
+.accountUser{
+    width:75px;
+    height:75px;
+    background-size:100% 100%;
+    float:left
+}
+.accountContMainDes{
+    font-size:14px;
+    line-height:26px;
+    float:left;
+    font-weight:bold;
+    margin-left:25px;
+}
+.accountContBg{
+    background-color: #666;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    display: none;
+    z-index:1001;
+}
+.accountTabCont{
+    width:705px;
+    margin:0 auto;
+}
+.colb2b{
+    color:#b2b5b5;
+}
+.accountTable{
+    width:100%;
+    text-align:center;
+    border-left:1px solid #dcdcdc;
+    border-top:1px solid #dcdcdc;
+    margin-top:10px;
+    font-size:16px;
+}
+.accountTable tr:first-child{
+    background-color:#f7f7f7;
+}
+.accountTable tr td{
+    height:35px;
+    line-height:35px;
+    border-right:1px solid #dcdcdc;
+    border-bottom:1px solid #dcdcdc;
+}
+.accountAchieve{
+    display:block;
+    width:148px;
+    height:40px;
+    line-height:40px;
+    margin:25px auto 0px;
+    text-align:center;
+    color:#fff;
+    font-size:16px;
+    background-color:#00c9fe;
+    border-radius:5px;
+}
+.mainContWarp{
+    width:100%;
+    height:100%;
+
+}
+.mainContWarp li{
+    width:100%;
+    height:100%;
+    
+}
+/*debt_quota.html*/
+
+/*debt_claimdetail.html*/
+.claimdetailCont{
+    background-color: #fff;
+    border-radius: 5px;
+    min-width: 1040px;
+    border: 1px solid #dcdcdc;
+    padding:15px 12px 75px;
+}
+.claimdetailHead{
+    font-size:14px;
+    color:#bebebe;  
+}
+.claimdetailHead .colbebA,.claimdetailHead .colbebA:hover{
+    color:#bebebe;
+}
+.colfcbA,.colfcbA:hover{
+    color:#fcb600;
+}
+.claimdetailMain{
+    width:100%;
+    padding-left:10px;
+    padding-right:10px;
+}
+.claimdetailMainHead{
+    height:27px;
+    width:100%;
+    color:#000;
+    font-size:14px;
+    border-bottom:2px solid #fcfcfc;
+    margin-top:25px;
+    position:relative;
+}
+.claimdetailMainDes{
+    font-size:14px;
+    line-height:14px;
+    color:#676767;
+    margin:15px 0px 25px 90px;
+}
+.claimdetailimgMain{
+    width:96%;
+    margin:30px auto 0px;
+    text-align:center;
+}
+.claimdetailimgCont{
+    width:220px;
+    display:inline-block;
+    margin-right:2%;
+    position: relative;
+}
+.claimdetailTextarea{
+    width:100%;
+    height:250px;
+    border:1px solid #dcdcdc;
+    border-radius:5px;
+    padding:10px 15px;
+    margin-top:20px;
+    background-color:#fcfcfc;
+}
+.imgDownload{
+    font-size:14px;
+    color:#cdcdcd;
+    display:inline-block;
+    position:absolute;
+    top:180px;
+    left:98px;
+}
+.imgDownload:hover{
+    color:#cdcdcd;
+    font-size:16px;
+}
+.recordTableWrap{
+    width:780px;
+    margin:24px auto 0px;
+    border:1px solid #dcdcdc;
+}
+.recordTableCont{
+    min-height:520px;
+}
+.relatedrecordTable{
+    width:100%;
+    text-align:center;
+}
+.relatedrecordTable tbody tr:nth-child(odd){
+    background-color:#fcfcfc;
+}
+.relatedrecordTable tbody tr:nth-child(even){
+    background-color:#f8f8f8;
+}
+.auditPng{
+    position: absolute;
+    right:20px;
+}
+.claimdetailFooter{
+    width:430px;
+    height:44px;
+    margin:75px auto 0px;
+}
+.btnReject{
+    display:inline-block;
+    width:180px;
+    height:44px;
+    line-height:44px;
+    text-align:center;
+    background-color:#c9c9c9;
+    color:#fff;
+    font-size:18px;
+    border-radius:5px;
+}
+.btnPass{
+    display:inline-block;
+    width:180px;
+    height:44px;
+    line-height:44px;
+    text-align:center;
+    background-color:#01c0f4;
+    color:#fff;
+    font-size:18px;
+    border-radius:5px; 
+}
+/*debt_claimdetail.html*/
+
+/*debt_createDebt.html*/
+.createDebtDes{
+    margin-left:60px;
+    font-size:14px;
+    color:#000;
+}
+.createDebtItem{
+    width:100%;
+    line-height:35px;
+    margin-top:16px;
+}
+.createDebtItem p{
+    line-height:12px;
+}
+.createDebtItem span{
+    display:inline-block;
+    width:60px;
+}
+.createDebtIpt{
+    margin-left:20px;
+    border:1px solid #e6e6e6;
+    border-radius:2px;
+    height:35px;
+    line-height:35px;
+    padding-left:10px;
+    display:inline-block;
+    box-sizing:border-box;
+}
+.width90{
+    width:90px!important;
+}
+.width716{
+    width:716px;
+}
+.width220{
+    width:220px;
+}
+.width152{
+    width:152px;
+}
+.width385{
+    width:385px;
+}
+.uploadImg{
+    width:94px;
+    height:94px;
+    margin-left:20px;
+    cursor: pointer;
+}
+.uploadBtn{
+    display:block;
+    width:72px;
+    height:24px;
+    line-height:24px;
+    background-color:#00c2f3;
+    color:#fff;
+    text-align:center;
+    border-radius:24px;
+    position: relative;
+}
+.iptFile{
+    width:100%;
+    height:100%;
+    position:absolute;
+    opacity:0;
+    cursor:pointer;
+    top:0px;
+    left:0px;
+    font-size:100px;
+}
+/*debt_createDebt.html*/
+
+/*supply_merchantList.html*/
+.width108{
+    width:108px;
+}
+.supplyImgwarp{
+    color:#000;
+    margin:20px 0px 0px 20px;
+}
+.supplyImg{
+    width:240px;
+    height:140px;
+    vertical-align:bottom;
+    margin-left:20px;
+}
+.supplyImgload{
+    font-size: 14px;
+    color: #cdcdcd;
+    display: inline-block;
+    margin-left:10px;
+}
+.supplyImgload:hover{
+    font-size: 16px;
+    color: #cdcdcd;
+}
+.supplyDesc{
+    display:inline-block;
+    width:134px;
+    text-align:right;
+}
+.width318{
+    width:318px;
+}
+.supplyItem{
+    width: 100%;
+    line-height: 35px;
+    margin:25px 0px 0px 90px;
+}
+.supplyIdcard{
+    width:150px;
+    height:140px;
+    margin-left:20px;
+}
+.lineH26{
+    line-height:26px;
+}
+.supplyTerm{
+    width:18px;
+    height:18px;
+    vertical-align:middle;
+    margin-left:20px;
+}
+.supplycreatWarp{
+    width:820px;
+    margin:80px auto;
+}
+.supplycreatCont{
+    width:308px;
+    height:200px;
+    border:1px solid #d0d0d0;
+    border-radius:6px;
+    text-align:center;
+}
+.createBtn{
+    display: inline-block;
+    width: 142px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    background-color: #169bd5;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top:40px;
+}
+.width620{
+    width:620px;
+}
+.width820{
+    width:850px;
+}
+.width504{
+    width:504px;
+}
+.goodsTextarea{
+    height:120px;
+    vertical-align:top;
+}
+.borderdee{
+    border: 1px solid #dee5e7;
+}
+.claimdetailBtn{
+    display:block;
+    margin:20px 0px 0px 90px;
+    color:#01c0f4;
+}
+.claimdetailBtn:hover{
+    color:#01c0f4;
+}
+.claimdetailNotcie{
+    width:472px;
+    height:352px;
+    border-radius:6px;
+    background:#fff;
+    display:none;
+    position: absolute;
+    z-index:9999;
+}
+.bg66c{
+    background-color:#01c0f4;
+}
+.detailNotcieCont{
+    width:428px;
+    margin:20px;
+}
+.detailNotcieCont p{
+    line-height:18px;
+}
+.releasegoodMain{
+    width:940px;
+    margin:90px auto;
+    height: 600px;
+}
+.releaseBox{
+    width:276px;
+    height:152px;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    text-align: center;
+}
+.goodsrelBtn{
+    display:block;
+    width:94px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    margin:30px auto;
+    background-color:#169bd5;
+    color:#fff;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.registrationBtn{
+    display: block;
+    width:78px;
+    height:28px;
+    line-height:28px;
+    background-color:#ff9900;
+    text-align:center;
+    border-radius:5px;
+    margin-top:10px;
+    margin-right:10px;
+    color:#fff;
+}
+.homepageCont{
+    width:570px;
+    height:528px;
+    border-radius:6px;
+    background:#fff;
+    display:none;
+    position: absolute;
+    z-index:9999;
+}
+.homepageMain{
+    width:100%;
+    height:420px;
+    box-sizing:border-box;
+    padding-top:40px;
+    border-bottom:1px solid #dcdcdc;
+}
+.certificate{
+    margin:0px 0px 0px 20px!important;
+}
+.homepageImg{
+    width:140px;
+    height:140px;
+    margin-left:20px;
+}
+.homepageFile{
+    display: block;
+    width:140px;
+    height:32px;
+    line-height:32px;
+    color:#fff;
+    text-align:center;
+    background-color:#01c0f4;
+    border-radius:5px;
+    margin:20px 0px 0px 20px;
+    position: relative;
+    overflow: hidden;
+}
+.homepageCancel{
+    display:block;
+    width:80px;
+    height:32px;
+    line-height:32px;
+    border-radius:4px;
+    border:1px solid #666;
+    color:#666;
+    text-align:center;
+    margin:15px 30px 0px 0px;
+}
+.homepageCancel:hover{
+    color:#666;
+}
+.homepageSure{
+    display:block;
+    width:80px;
+    height:32px;
+    line-height:32px;
+    border-radius:4px;
+    border:1px solid #ff9900;
+    background-color:#ff9900;
+    color:#fff;
+    text-align:center;
+    margin:15px 30px 0px 0px;
+}
+.noRecordpng{
+    margin-top:150px;
+}
+.no-records-found{
+    background-color:#fff!important;
+    border:none!important;
+}
+.activityType{
+    width:262px;
+    margin:30px auto;
+    text-align:left;
+}
+.activityBtn{
+    display: inline-block;
+    width: 142px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    background-color: #ff9900;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.width210{
+    width:210px;
+}
+.tradingDesc{
+    display: inline-block;
+    width: 84px;
+    text-align: right;
+}
+.tradingSearch{
+    display:inline-block;
+    width:70px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    border-radius:4px;
+    border:1px solid #00c2f3;
+    background-color:#00c2f3;
+    color:#fff;
+}
+.tradingExport,.tradingNextpage,.tradingLastpage{
+    display:inline-block;
+    width:70px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    border-radius:4px;
+    border:1px solid #e6e6e6;
+    color:#666; 
+}
+.tradingExport:hover,.tradingNextpage:hover,.tradingLastpage:hover{
+    color:#666;
+}
+.tradingSlidedown,.tradingSlideup{
+    height:30px;
+    line-height:30px;
+    border-bottom:1px solid #e6e6e6;
+    text-align:center;
+    color:#bfbfbf;
+    cursor: pointer;
+}
+.slidedownImg{
+    width:15px;
+    height:9px;
+    vertical-align:middle;
+}
+.tradingNav,.returnNav,.FlowdetailNav{
+    min-width:1000px;
+    width:96%;
+    margin: 20px auto 20px;
+    height:30px;
+    border-bottom:2px solid #e6e6e6;
+}
+.tradingNav li,.returnNav li{
+    display:inline-block;
+    width:100px;
+    text-align:center;
+    height:30px;
+    cursor: pointer;
+}
+.tradingNav li span,.returnNav li span{
+    display:inline-block;
+    width:100px;
+    height:18px;
+    border-right:1px solid #e6e6e6;
+}
+.returnNav li,.returnNav li span{
+    width:124px;
+}
+.tradingClick{
+    border-bottom:1px solid #ff0000;
+    color:#ff0000;
+}
+.tradingHead{
+    min-width:1000px;
+    width:98%;
+    margin: 10px auto 20px;
+    height:16px;
+}
+.tradingMainWarp{
+    min-width:1000px;
+    width:98%;
+    margin:40px auto 20px;
+    min-height:750px;
+}
+.tradingMainhead{
+    background-color:#f4f4f4;
+    width:100%;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+}
+.tradingConthead{
+    background-color:#f4f4f4;
+    width:100%;
+    height:36px;
+    line-height:36px;
+    text-align:left;
+}
+.tradingMainhead li{
+    width:9%;
+    float:left;
+}
+.tradingContmain li{
+    width:9%;
+    float:left;
+    margin-top:20px;
+}
+.tradingCont{
+    width:100%;
+    height: 135px;
+    border:1px solid #e6e6e6;
+    margin-top:10px;
+    text-align:center;
+}
+.tradingMainhead li:first-child,.tradingContmain li:first-child{
+    width:37%;
+}
+.tradingContmain li p{
+    line-height:20px;
+}
+.tradingContmain{
+    padding-left:20px;
+}
+.tradingContImg{
+    width:75px;
+    height:65px;
+    float:left;
+}
+.tradinggoodstitle{
+    float:left;
+    width:250px;
+    text-align:left;
+    margin-top:15px;
+    margin-left:10px;
+    line-height:20px;
+}
+.tradingDetailbtn{
+    display:block;
+    color:#1abdf2;
+    margin-top:2px;
+}
+.tradingDetailbtn:hover{
+    color:#1abdf2;
+}
+.tradingDeliverbtn{
+    display:inline-block;
+    margin-top:5px;
+    width:68px;
+    height: 26px;
+    line-height:26px;
+    text-align:center;
+    color:#fff;
+    background-color:#ffcc00;
+    border-radius:4px;
+}
+.deliverCont{
+    width: 500px;
+    height: 360px;
+    border-radius: 6px;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+.deliverMain{
+    width:392px;
+    height:52px;
+    margin:50px auto 0px;
+    border-bottom:1px solid #e6e6e6;
+}
+.width280{
+    width:280px;
+}
+.deliverFooter{
+    width:100%;
+    border-top:1px solid #e6e6e6;
+    height: 70px;
+    line-height:70px;
+    text-align:center;
+    margin-top:60px;
+}
+.btnDeliver{
+    display:inline-block;
+    width:140px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    color:#fff;
+    background-color:#ffcc00;
+    border-radius:6px;
+}
+.orderDetails{
+    width: 980px;
+    height: 610px;
+    border-radius: 6px;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+.orderDetailsNotice{
+    width:960px;
+    margin:10px auto;
+    height:52px;
+    line-height:52px;
+    background-color:#fff0e2; 
+}
+.orderDetailsTab{
+    width:210px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    background-color:#d7d7d7;
+    color:#fff;
+    margin-left:10px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+}
+.orderDetailsTab li{
+    width:70px;
+    float:left;
+    cursor: pointer;
+}
+.orderDetailsTab li:first-child,.selectedTab li:first-child{
+    border-top-left-radius:5px;
+}
+.orderDetailsTab li:last-child,.selectedTab li:last-child{
+    border-top-right-radius:5px;
+}
+.tabClick{
+    background-color:#169bd5;
+}
+.orderDetailsMain{
+    width:960px;
+    height:405px;
+    margin:0px auto;
+    border:1px solid #e6e6e6;
+    padding:20px 20px;
+    box-sizing:border-box;
+}
+.orderDetailsitem{
+    display:inline-block;
+    width:260px;
+}
+.orderDetailstable{
+    width:100%;
+    margin-top:15px;
+    border-top:1px solid #e6e6e6;
+    border-left:1px solid #e6e6e6;
+    text-align:center;
+}
+.orderDetailstable thead tr{
+    height:52px;
+    line-height:52px;
+}
+.orderDetailstable tr{
+    height:100px;
+    line-height:100px;
+}
+.orderDetailstable thead td,.orderDetailstable tr td{
+    border-bottom:1px solid #e6e6e6;
+    border-right:1px solid #e6e6e6;
+}
+.orderDetailsImg{
+    vertical-align: middle;
+}
+.orderDetailsgoods{
+    width:300px;
+    display:inline-block;
+    margin-left:10px;
+    line-height:20px;
+    text-align:left;
+}
+.orderDetailsreal{
+    width:100%;
+    height:40px;
+    line-height:40px;
+    border-bottom:1px solid #e6e6e6;
+}
+.orderDetailsaddres{
+    width:60px;
+    height:28px;
+    line-height:28px;
+    display:inline-block;
+    color:#666;
+    border-radius: 4px;
+    border: 1px solid #e6e6e6;
+    text-align:center;
+    margin-top:-8px;
+}
+.orderDetailsaddres:hover{
+    color:#666;
+}
+.receiptCont,.auditCont{
+    width:480px;
+    height:446px;
+    border-radius: 6px;
+    border:1px solid #e6e6e6;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 10001;
+}
+.receiptContHead{
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    background-color: #d7d7d7;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+}
+.width124{
+    width:124px;
+}
+.width262{
+    width:262px;
+}
+.receiptSure,.invoiceSure{
+    width:90px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    border:1px solid #ffcc33;
+    background-color:#ffcc33;
+    color:#fff;
+    text-align:center;
+    border-radius:5px;
+}
+.receiptCancel{
+    width:90px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    border:1px solid #e6e6e6;
+    background-color:#fff;
+    color:#666;
+    text-align:center;
+    border-radius:5px;
+}
+.receiptCancel:hover{
+    color:#666;
+}
+.invoiceCont{
+    width:475px;
+    height:250px;
+    border-radius: 6px;
+    border:1px solid #e6e6e6;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 10001;
+}
+.width138{
+    width:138px;
+}
+.width162{
+    width:162px;
+}
+.deliverSearch{
+    width:70px;
+    height:30px;
+    line-height:30px;
+    cursor: pointer;
+    text-align:center;
+    background-color:#00c2f3;
+    color:#fff;
+    display:inline-block;
+    border-radius:4px;
+}
+.returnHead li,.returnMain li{
+    width:12%;
+}
+.returnAgree,.returnRefuse{
+    display:inline-block;
+    width:54px;
+    height:28px;
+    line-height:28px;
+    text-align:center;
+    background-color:#ffcc00;
+    border-radius:4px;
+    color:#fff;
+    margin-top:5px;
+}
+.bgff0{
+    background-color:#ff0000;
+}
+.classAdd{
+    width:48px;
+    height:28px;
+    line-height:28px;
+    font-size:20px;
+    border:1px solid #e6e6e6;
+    border-radius:3px;
+    text-align:center;
+    cursor:pointer;
+    margin:20px;
+}
+.ztreeItemBackground{
+    border-top:1px solid #e6e6e6;
+    padding-top:10px;
+    width:98%;
+    margin:0 auto;
+}
+.ztree li span.button.add {
+    margin-left:2px; 
+    margin-right: -1px; 
+    background-position:-144px 0;
+    vertical-align:top; 
+    *vertical-align:middle
+}
+/*supply_merchantList.html*/
+
+/*finance_Edebt.html*/
+.width138{
+    width:138px;
+}
+.edebtimgWarp{
+    width:100%;
+    min-width:1040px;
+    height:110px;
+    background-color:#fff;
+    margin-bottom:20px;
+}
+.edebtimgCont{
+    width:24%;
+    height:110px;
+    color:#fff;
+    font-size:14px;
+    padding-top:23px;
+    box-sizing:border-box;
+    border-radius:6px;
+}
+.edebtimgCont p,.platformimgCont p{
+    line-height:24px;
+    width:54%;
+    text-align:center;
+    float:left;
+    margin-top:5px;
+}
+.edebtImg{
+    float:left;
+    margin-left:7.4%;
+}
+.mgl1p{
+    margin-left:1.3%;
+}
+.mgl2p{
+    margin-left:2%;
+}
+.platformimgWarp{
+    width:96%;
+    min-width:1000px;
+    margin:20px auto;
+    height:110px;
+}
+.platformimgCont,.transferimgCont{
+    width:32%;
+    height:110px;
+    color:#fff;
+    font-size:14px;
+    padding-top:23px;
+    box-sizing:border-box;
+    border-radius:6px;
+    position:relative;
+}
+.platformMain{
+    width:96%;
+    min-width:1000px;
+    margin:20px auto;
+}
+.platseachCont{
+    width:100%;
+    height:94px;
+    border:1px solid #e4eaec;
+    border-radius:6px;
+    margin-top:15px;
+    padding:15px;
+    box-sizing:border-box;
+}
+.platformUl li{
+    float:left;
+    text-align:center;
+    margin-left:15px;
+    cursor:pointer;
+    height:22px;
+    line-height:22px;
+    width:48px;
+    text-align:center;
+}
+.activeClick{
+    background-color:#F76538;
+    border-radius:3px;
+    color:#fff;
+}
+.bordere4e{
+    border:1px solid #e4eaec;
+}
+.platDetails{
+    width: 690px;
+    height: 340px;
+    border-radius: 6px;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+.platDetailsmain{
+    padding:20px;
+    position:relative;
+}
+.platuserImg{
+    width:70px;
+    height:70px;
+}
+.platDetailstable{
+    width:100%;
+    margin-top:10px;
+    border-left:1px solid #e4eaec;
+    border-top:1px solid #e4eaec;
+}
+.platDetailstable tr{
+    height:35px;
+    line-height:35px;
+    text-align:right;
+}
+.platDetailstable tr td{
+    border-right:1px solid #e4eaec;
+    border-bottom:1px solid #e4eaec;
+    padding:0px 20px;
+}
+.transferBtn{
+    width:50px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    background-color:#fff;
+    cursor:pointer;
+    position:absolute;
+    bottom:10px;
+    right:3%;
+    color:#666;
+    border-radius:5px;
+}
+.transferTableWarp{
+    min-width:1000px;
+    width:96%;
+    margin:0px auto;
+    border:1px solid #e4eaec;
+    min-height: 600px;
+    font-size: 14px;
+    margin-bottom:30px;
+}
+.transdetailCont,.detailCont{
+    width:496px;
+    height:290px;
+    border-radius: 6px;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+.transSure{
+    width:140px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    margin:20px auto 0px;
+    color:#fff;
+    background-color:#ffcc00;
+    border-radius:6px;
+    font-size:14px;
+    cursor:pointer;
+}
+.colc5c{
+    color:#c5c5c5;
+}
+.width80{
+    width:80px;
+}
+.width90{
+    width:90px
+}
+.width154{
+    width:154px;
+}
+.FlowdetailNav li{
+    display: inline-block;
+    width: 56px;
+    text-align: center;
+    height: 30px;
+    cursor: pointer;
+}
+.FlowdetailNav li span{
+    display:inline-block;
+    width:56px;
+    height:18px;
+    border-right:1px solid #e6e6e6;
+}
+.userwidthFoot{
+    width:370px;
+    height:40px;
+    margin:15px auto;
+}
+.userrejectBtn,.usersuccessBtn{
+    width:140px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    border-radius:6px;
+    background-color:#797979;
+    color:#fff;
+    cursor:pointer;
+    font-size:14px;
+}
+.pendingImg{
+    position:absolute;
+    top:15px;
+    right:20px;
+}
+.rejectCont{
+    width:428px;
+    height:320px;
+    border-radius: 6px;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    border:1px solid #e4eaec;
+}
+.rejectMain{
+    display:block;
+    width:360px;
+    height:110px;
+    margin:40px auto 0px;
+    border:1px solid #e4eaec;
+    padding:10px;
+}
+.rejectHead{
+    height: 40px;
+    line-height:40px;
+    background-color:#d7d7d7;
+}
+.rejectNotice{
+    width:360px;
+    margin:10px auto;
+    text-align:right;
+    color:#bababa;
+}
+.rejectSubmit{
+    width:110px;
+    height:36px;
+    line-height:36px;
+    text-align:center;
+    margin:30px auto 0px;
+    color:#fff;
+    border-radius:6px;
+    background-color:#169bd5;
+    cursor:pointer;
+}
+/*finance_Edebt.html*/
+
+/*operate_Noticepush.html*/
+.noticepushMain{
+    width: 96%;
+    min-width: 1000px;
+    margin: 20px auto;
+}
+.noticepushNav{
+    width:100%;
+    height:100px;
+    border: 1px solid #e4eaec;
+}
+.pushNavhead{
+    width:100%;
+    height:42px;
+    line-height:42px;
+    background-color:#f2f2f2;
+    padding:0px 10px;
+    box-sizing:border-box;
+}
+.searchImg,.catalogImg{
+    display:inline-block;
+    width:18px;
+    height:18px;
+    vertical-align:text-bottom;
+}
+.searchImg{
+    background-image:url(../img/searchImg.png); 
+    background-size:100% 100%;
+}
+.catalogImg{
+    background-image:url(../img/catalogImg.png); 
+    background-size:100% 100%;
+}
+.pushNavSearch{
+    display:inline-block;
+    width:70px;
+    height:30px;
+    line-height:30px;
+    border-radius:3px;
+    text-align:center;
+    background-color:#fff;
+    margin-top:5px;
+    cursor:pointer;
+    color:#a4a4a4;
+    border:1px solid #ccc;
+}
+.noticepushTableWarp{
+    width: 100%;
+    min-height: 600px;
+    font-size: 14px;
+    border:1px solid #e4eaec;
+    margin-top:15px;
+}
+.pushTablehead{
+    width:100%;
+    height:42px;
+    line-height:42px;
+    background-color:#f2f2f2;
+    padding:0px 10px;
+    box-sizing:border-box;
+}
+.noticepushBtn{
+    color: #a4a4a4;
+    background-color: #fff;
+    border:1px solid #ccc;
+    display: inline-block;
+    width:86px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+    margin-top:7px;
+    margin-right:10px;
+    border-radius: 4px;
+    cursor:pointer;
+}
+.noticepushBtn:hover{
+    color:#333;
+    background-color:rgba(0,0,0,.125);
+    border:1px solid #a4a4a4;
+}
+.releaseMain{
+    width:100%;
+    margin-top:20px;
+    min-height:650px;
+}
+.releaseMaincont{
+    margin-top:50px;
+}
+.releaseMainImg{
+    width:208px;
+    height:40px;
+    line-height:40px;
+    background-image:url(../img/releaseMainImg.png);
+    background-size:100% 100%;
+    color:#fff;
+    font-size:14px; 
+}
+.releaseMainitem{
+    height:40px;
+    line-height:40px;
+    margin-left:238px;
+}
+.width460{
+    width:460px;
+}
+.width780{
+    width:780px;
+}
+.releasenoticeBtn{
+    width:140px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    background-color:#169bd5;
+    border-radius:6px;
+    color:#fff;
+    margin:45px 0px 40px 560px;
+    cursor:pointer;
+}
+.commodityUl{
+    float:left;
+    margin-left:-10px;
+}
+.commodityUl li{
+    display:inline-block;
+    width:100px;
+    text-align:center;
+    cursor:pointer;
+}
+.commodClick{
+    border-bottom:3px solid #66cccc;
+}
+.auditCont{
+    height:380px;
+}
+.adddebtCont{
+    width:480px;
+    height:216px;
+    border-radius: 6px;
+    background: #fff;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+.width268{
+    width:268px;
+}
+.addSearch{
+    display:inline-block;
+    width:32px;
+    height:32px;
+    line-height:30px;
+    text-align:center;
+    position:absolute;
+    top:78px;
+    border-right:1px solid #dcdcdc;
+    border-top:1px solid #dcdcdc;
+    border-bottom:1px solid #dcdcdc;
+    cursor:pointer;
+}
+.adddebtMain{
+    height:70px;
+}
+.adddebtFoot{
+    width:100%;
+    height:70px;
+    line-height:70px;
+    text-align:center;
+    border-top:1px solid #dcdcdc;
+}
+.adddebtSubmit{
+    display:inline-block;
+    width:116px;
+    height:34px;
+    line-height:34px;
+    text-align:center;
+    color:#fff;
+    background-color:#169bd5;
+    border-radius:6px;
+    cursor:pointer;
+}
+.adddebtImg{
+    width:16px;
+    height:16px;
+    position: absolute;
+    right: 30px;
+    top: 85px;
+}
+.addusersCont,.linkpushCont,.activitypushCont,.goodspushCont,.selectedCont,.selectedgoodsCont,.couponCont,.authenCont,.authrejectCont{
+    width:560px;
+    border-radius:6px;
+    background:#fff;
+    display:none;
+    position:absolute;
+    z-index:9999;
+}
+/*operate_Noticepush.html*/
+
+/*user_Userslist.html*/
+.height160{
+    height:160px;
+}
+.width372{
+    width:372px;
+}
+.linkpushSubmit{
+    width:90px;
+    height:34px;
+    line-height: 34px;
+    text-align: center;
+    color: #fff;
+    background-color: #169bd5;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+}
+.selectedMain{
+    padding:20px;
+    box-sizing:border-box;
+}
+.selectedTab{
+    width: 140px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #d7d7d7;
+    color: #fff;
+    margin-left: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.selectedTab li{
+    width: 70px;
+    float: left;
+    cursor: pointer;
+}
+.selectTablewarp{
+    width:100%;
+    min-height: 370px;
+    font-size: 14px;
+    border:1px solid #dcdcdc;
+}
+.width650{
+    width:650px;
+}
+.goodSearch{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+    position: absolute;
+    border-right: 1px solid #dcdcdc;
+    border-top: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    cursor: pointer;
+}
+.userdetailUl{
+    width:98%;
+    margin:0 auto;
+    height:200px;
+    border-top:1px solid #dcdcdc;
+    border-left:1px solid #dcdcdc;
+    border-bottom:1px solid #dcdcdc; 
+    text-align:center;
+}
+.userdetailUl li{
+    width:33.2%;
+    height:200px;
+    border-right:1px solid #dcdcdc;
+}
+.userdetailImg{
+    width:70px;
+    height:70px;
+    margin-top:30px;
+}
+.userdetailMember{
+    width:80px;
+    height:22px;
+    line-height:22px;
+    text-align:center;
+    background-color:#169bd5;
+    color:#fff;
+    display:inline-block;
+    border-radius:22px;
+}
+.userdetailLi{
+    width:100%;
+    height:66px;
+    line-height:66px;
+    border-bottom:1px solid #dcdcdc;
+}
+.userdetailItem{
+    width:32%;
+    height:66px;
+    border-right:1px solid #dcdcdc;
+    background-color:#fafafa;
+}
+.userdetailMain{
+    width:98%;
+    margin:20px auto;
+    border:1px solid #dcdcdc;
+    padding:30px 20px;
+    box-sizing:border-box;
+}
+.userdetailIcon{
+    width:11px;
+    vertical-align:text-bottom; 
+}
+.countTable{
+    width:100%;
+    border-left:1px solid #dcdcdc;
+    border-top:1px solid #dcdcdc;
+    text-align:center;
+}
+.countTable tr td{
+    height:48px;
+    line-height:48px;
+    border-right:1px solid #dcdcdc;
+    border-bottom:1px solid #dcdcdc;
+}
+.usereditCont{
+    width:750px;
+    margin:30px auto;
+}
+.width280{
+    width:280px;
+}
+.width132{
+    width:132px;
+}
+.authenImg{
+    width:300px;
+    vertical-align:top;
+}
+.enlargeBtn{
+    position:absolute;
+    bottom:128px;
+    right:50px;
+    cursor:pointer;
+}
+.authrejectCont{
+    height:463px;
+}
+.authrejectMain{
+    display: block;
+    width: 516px;
+    height: 200px;
+    margin: 50px auto 0px;
+    border: 1px solid #e4eaec;
+    padding: 10px;
+    box-sizing:border-box;
+}
+/*user_Userslist.html*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fn12{
+    font-size:12px;
+}
+.fn20{
+    font-size:20px;
+}
+.mgr0{
+    margin-right:0px;
+}
+.mgr15{
+    margin-right:15px;
+}
+.mgt5{
+    margin-top:5px;
+}
+.mgt10{
+    margin-top:10px;
+}
+.mgt15{
+    margin-top:15px;
+}
+.mgt20{
+    margin-top:20px;
+}
+.mgt25{
+    margin-top:25px;
+}
+.mgt30{
+    margin-top:30px;
+}
+.mgt35{
+    margin-top:35px;
+}
+.mgt40{
+    margin-top:40px;
+}
+.mgt50{
+    margin-top:50px;
+}
+.mgt60{
+    margin-top:60px;
+}
+.mgt90{
+    margin-top:90px;
+}
+.mgt100{
+    margin-top:100px;
+}
+.mgl0{
+    margin-left:0px;
+}
+.mgl2{
+    margin-left:2px;
+}
+.mgl10{
+    margin-left:10px;
+}
+.mgl15{
+    margin-left:15px;
+}
+.mgl20{
+    margin-left:20px;
+}
+.mgl30{
+    margin-left:30px;
+}
+.mgl50{
+    margin-left:50px;
+}
+.mgl85{
+    margin-left:85px;
+}
+.mgl55{
+    margin-left:55px;
+}
+.mgl68{
+    margin-left:68px;
+}
+.mgl78{
+    margin-left:78px;
+}
+.mgl150{
+    margin-left:150px;
+}
+.mgl158{
+    margin-left:158px;
+}
+.mgll85{
+    margin-left:85px;
+}
+.mgl238{
+    margin-left:238px;
+}
+.mgl280{
+    margin-left:280px;
+}
+.mgl370{
+    margin-left:370px!important;
+}
+.mgl7{
+    margin-left:10%;
+}
+.mgl5{
+    margin-left:5px;
+}
+.mgr10{
+    margin-right:10px;
+}
+.mgr20{
+    margin-right:20px;
+}
+.mgb40{
+    margin-bottom:40px;
+}
+.mgb152{
+    margin-bottom:152px;
+}
+.pdt20{
+    padding-top:20px;
+}
+.mgb10{
+    margin-bottom:10px;
+}
+.mgb20{
+    margin-bottom:20px;
+}
+.margin0{
+    margin:0px!important;
+}
+.textCent{
+    text-align:center;
+}
+.overAutox{
+    overflow-x:auto;
+}
+.fn16{
+    font-size:16px;
+}
+.fn18{
+    font-size:18px;
+}
+.colfc3{
+    color:#fc3a74;
+}
+.col08a{
+    color:#08aa00;
+}
+.colf3b{
+    color:#f3b605;
+}
+.colfdd{
+    color:#fdd22a;
+}
+.col000{
+    color:#000;
+}
+.cole70{
+    color:#e7064f;
+}
+.colb0b{
+    color:#b0b0b0;
+}
+.colff8{
+    color:#ff8900;
+}
+.colff0{
+    color:#ff0000!important;
+}
+.colff9{
+    color:#ff9900;
+}
+.col66c{
+    color:#169bd5!important;
+}
+.col666{
+    color:#666;
+}
+.col999{
+    color:#999;
+}
+.colfdc{
+    color:#fdca7e;
+}
+.col6cc{
+    color:#66cccc!important;
+}
+.colbab{
+    color:#bababa;
+}
+.borderNone{
+    border:none!important;
+}
+.bgffc{
+    background-color:#ffcc33;
+}
+.bgff9{
+    background-color:#ff9999;
+}
+.bg6c9{
+    background-color:#66cc99;
+}
+.bgc90{
+    background-color:#cc9900;
+}
+.bgf96{
+    background-color:#ff9966;
+}
+.bg949{
+    background-color:#949494;
+}
+.bgf8f{
+    background-color:#f8f8f8;
+}
+.bgd7d{
+    background-color:#d7d7d7;
+}
+.bg169{
+    background-color:#169bd5;
+}
+.bgf2f{
+    background-color:#f2f2f2;
+}
+.bgfbf{
+    background-color:#fbfbfb;
+}
+.bgfaf{
+    background-color:#fafafa;
+}
+select{
+    color:#c1c1c1;
+}
+.fixed-table-container{
+    border:none;
+}
+.fixed-table-pagination{
+    padding:0 15px;
+}
+.fixed-table-header{
+    height:0px;
+}
+.fixed-table-body{
+    height:602px;
+}
+.fixed-table-pagination .pagination-detail{
+    margin-top:15px;
+}
+@media (max-width: 1280px) {
+    .wrapperPdl{
+        padding-left:50px;
+        padding-right:50px;
+    }
+}
+@media (max-width: 1440px) {
+    .mgl370{
+        margin-left:244px!important;
+    }
+    body.fixed-sidebar .navbar-static-side{
+        width:144px;
+    } 
+    .menuCont{
+        width:120px;
+        left:144px;
+    }
+    #page-wrapper{
+        margin: 0 0 0 142px;
+    }
+    .mgl7{
+        margin-left:7%;
+    }
+    .menucontDrop{
+        left:8.5px;
+    }
+    .contlistWarp {
+        margin-left: 25.73%;
+    }
+    .contlistItemActive .contlistWarp {
+        margin-left: 25.65%;
+    }
+}
+@media (max-width: 1280px) {
+    .mgl370{
+        margin-left:180px!important;
+    } 
+}

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>活动商品</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    活动商品
+                </div>
+                <div class="debtManagementTitle">
+                    已结束商品
+                </div>
+                <a class="registrationBtn fr" onclick="openLocation('supply_activityType')">活动报名</a>
+            </div>
+            <div>
+                <div class="mainContWarp animated fadeIn">
+                    <div class="debtManagementNav">
+                        <div class="debtManagementNav">
+                            <select class="debtManagementSelect">
+                                <option value="">活动类型</option>
+                                <option value="">总级行</option>
+                                <option value="">省级行</option>
+                            </select>
+                            <select class="debtManagementSelect">
+                                <option value="">商品类目</option>
+                                <option value="">总级行</option>
+                                <option value="">省级行</option>
+                            </select>
+                            <input placeholder="开始日期（年/月/日/时）" class="managementDate" id="managementStart" />
+                                <span class="mgl10">至</span>
+                            <input placeholder="结束日期（年/月/日/时）" class="managementDate" id="managementEnd" />
+                            <input type="text" id="keywordSearch" placeholder="请输入标题/用户名搜索" class="managementDate" /> 
+                            <div class="debtManagementSearch inlineB width92 fr">
+                                查询
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ManagementTableWarp">
+                        <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable1">
+                        </table>
+                    </div>
+                    <div class="homepageCont">
+                        <div class="delContHead bg66c">
+                            <span class="mgl20">上首页</span>
+                            <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose()"/>
+                        </div>
+                        <div class="homepageMain">
+                            <div>
+                                <span class="supplyDesc">*首页位置：</span>
+                                <input type="radio" name="certificate" value="0" class="certificate verMiddle" checked="checked">
+                                <span class="verMiddle">位置一</span> 
+                                <input type="radio" name="certificate" value="1" class="certificate verMiddle">
+                                <span class="verMiddle">位置二</span>
+                                <input type="radio" name="certificate" value="2" class="certificate verMiddle">
+                                <span class="verMiddle">位置三</span>
+                                <input type="radio" name="certificate" value="3" class="certificate verMiddle">
+                                <span class="verMiddle">位置四</span>
+                            </div>
+                            <div class="mgt15">
+                                <span class="supplyDesc">*商品标题：</span>
+                                <input type="text" placeholder="请输入商品标题" class="createDebtIpt width318">
+                            </div>
+                            <div class="mgt15">
+                                <span class="supplyDesc">*商品卖点：</span>
+                                <input type="text" placeholder="请输入商品卖点" class="createDebtIpt width318">
+                            </div>
+                            <div class="mgt25">
+                                <span class="supplyDesc">*商品主题：</span>
+                                <div class="inlineB verMiddle">
+                                    <img src="./img/uploadImg.png" class="homepageImg">
+                                    <a class="homepageFile">
+                                        上传图片
+                                        <input type="file" name="file" class="iptFile"/>
+                                    </a>
+                                    <p class="mgt10 colb0b">提示：商品主图背景须白底，建议尺寸<span class="homepageNotice">345*270</span>px</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="homepageSure fr">确定</a>
+                        <a class="homepageCancel fr">取消</a>
+                    </div>
+                    <div class="accountContBg"></div>
+                </div> 
+                <div class="mainContWarp animated fadeIn" style="display:none">
+                    <div class="debtManagementNav">
+                        <select class="debtManagementSelect">
+                            <option value="">活动类型</option>
+                            <option value="">总级行</option>
+                            <option value="">省级行</option>
+                        </select>
+                        <select class="debtManagementSelect">
+                            <option value="">商品类目</option>
+                            <option value="">总级行</option>
+                            <option value="">省级行</option>
+                        </select>
+                        <input placeholder="开始日期（年/月/日/时）" class="managementDate" id="managementStart" />
+                            <span class="mgl10">至</span>
+                        <input placeholder="结束日期（年/月/日/时）" class="managementDate" id="managementEnd" />
+                        <input type="text" id="keywordSearch" placeholder="请输入标题/用户名搜索" class="managementDate" /> 
+                        <div class="debtManagementSearch inlineB width92 fr">
+                            查询
+                        </div>
+                    </div>
+                    <div class="ManagementTableWarp">
+                        <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable2">
+                        </table>
+                    </div>
+                </div>     
+            </div>    
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+
+        //上首页按钮点击弹窗
+        function showhomepageCont(){                                   
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $('.homepageCont');
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() - $(".homepageCont").height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg,.homepageCont").delay("100").fadeIn();
+        }
+
+        function accountContClose(){                                      
+            $(".accountContBg,.homepageCont").delay("100").fadeOut();
+        }
+
+        //手动制造30条数据
+        var datas  = [];
+        var data = [];
+        for(var i=0;i<300;i++){
+            datas[i]={"j":i,"a":"房产"+i,"b":"精选活动","c":"Y4512"+i,"d":"精装公寓60平方啊啊啊啊啊啊","e":"5142.00","f":"100","g":"4211","h":"啊啊","i":"2017/09/22","k":"正常","id":i}
+        }
+
+        $('#reportTable1').bootstrapTable({
+            method: 'get',
+            cache: false,
+            striped: false,
+            pagination: true,
+            pageSize: 15,
+            height:640,
+            pageNumber:1,
+            pageList: [15],
+            showColumns: false,
+            showRefresh: false,
+            showExport: false,
+            exportTypes: ['csv','txt','xml'],
+            search: false,
+            clickToSelect: false,
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+            columns: 
+            [
+                {field:"checked",checkbox:true},
+                {field:"j",title:"排序",align:"center",valign:"middle"},
+                {field:"a",title:"类目",align:"center",valign:"middle"},
+                {field:"b",title:"活动",align:"center",valign:"middle"},
+                {field:"c",title:"商品ID",align:"center",valign:"middle"},
+                {field:"d",title:"标题",align:"center",valign:"middle",
+                    formatter:function(value,row,index){
+                        if(value.length>10){
+                            var a = '<span>'+value.substring(0,9)+'...'+'</span>';
+                        }else{
+                            var a = '<span>'+value+'</span>';
+                        }
+                        return a;
+                    } 
+                },
+                {field:"e",title:"e债币(币)",align:"center",valign:"middle"},
+                {field:"f",title:"现金价(元)",align:"center",valign:"middle"},
+                {field:"g",title:"数量",align:"center",valign:"middle"},
+                {field:"h",title:"用户",align:"center",valign:"middle"},
+                {field:"i",title:"结束时间",align:"center",valign:"middle"},
+                {
+                    field: 'k',
+                    title: '状态',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<span class="colff9">'+value+'</span>'
+                        return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a  class="col66c" onclick="showhomepageCont()";>上首页</a>'
+                        var e = '<a class="mgl10">停止</a>' 
+                        return a+e;  
+                    }
+                }
+            ],
+            data:datas,
+            formatNoMatches: function(){
+                var a = '<div><img src="./img/noRecord.png" class="noRecordpng"/><p class="col666 mgb152">您还没有申报活动~</p></div>'
+                return a;
+            }
+        });	
+        $('#reportTable2').bootstrapTable({
+            method: 'get',
+            cache: false,
+            striped: false,
+            pagination: true,
+            pageSize: 15,
+            height:640,
+            pageNumber:1,
+            pageList: [15],
+            showColumns: false,
+            showRefresh: false,
+            showExport: false,
+            exportTypes: ['csv','txt','xml'],
+            search: false,
+            clickToSelect: false,
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+            columns: 
+            [
+                {field:"checked",checkbox:true},
+                {field:"j",title:"排序",align:"center",valign:"middle"},
+                {field:"a",title:"类目",align:"center",valign:"middle"},
+                {field:"b",title:"活动",align:"center",valign:"middle"},
+                {field:"c",title:"商品ID",align:"center",valign:"middle"},
+                {field:"d",title:"标题",align:"center",valign:"middle",
+                    formatter:function(value,row,index){
+                        if(value.length>10){
+                            var a = '<span>'+value.substring(0,9)+'...'+'</span>';
+                        }else{
+                            var a = '<span>'+value+'</span>';
+                        }
+                        return a;
+                    } 
+                },
+                {field:"e",title:"e债币(币)",align:"center",valign:"middle"},
+                {field:"f",title:"现金价(元)",align:"center",valign:"middle"},
+                {field:"g",title:"数量",align:"center",valign:"middle"},
+                {field:"h",title:"用户",align:"center",valign:"middle"},
+                {field:"i",title:"结束时间",align:"center",valign:"middle"},
+                {
+                    field: 'k',
+                    title: '状态',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<span class="colff9">停止</span>'
+                        return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var e = '<a >删除</a>' 
+                        return e;  
+                    }
+                }
+            ],
+            data:datas,
+        });		
+        var imgUrl=[];			
+        $(function(){
+            $(".iptFile").change(function() {
+                //判断是否支持FileReader
+                if (window.FileReader) {
+                    var reader = new FileReader();
+                } else {
+                    alert("您的设备不支持图片预览功能！");
+                    return false;
+                }
+                var index = $(".iptFile").index($(this));
+                var $file = $(this);
+                var fileObj = $file[0];
+                var windowURL = window.URL || window.webkitURL;
+                var dataURL;
+                var $img = $(".homepageImg").eq(index);
+                var imageType = /^image\//;
+                if (!imageType.test(fileObj.files[0].type)) {       //是否是图片
+                    alert("只能上传图片！");
+                    return false;
+                }
+                if(fileObj.files[0].size>2*1024*1024){      //判断是不是大于规定的大小
+                    alert("上传图片请小于2MB！");
+                    return false;
+                }
+                if(fileObj && fileObj.files && fileObj.files[0]){
+                    dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                    imgUrl[index]=dataURL;
+                    $img.attr('src',dataURL);
+                }else{
+                    dataURL = $file.val();
+                    imgUrl[index]=dataURL;
+                    var imgObj = $(".homepageImg").eq(index);
+                    imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+                }
+                reader.onload = function(evt){
+                    imgUrl[index] = evt.srcElement ? evt.srcElement.result:evt.target.result;
+                }
+                reader.readAsDataURL(fileObj.files[0]);
+            });
+            //首页位置改变图片建议尺寸修改
+            $(".certificate").change(function(){
+                if($(this).val()==0){
+                    $(".homepageNotice").text("345*270");
+                }else if($(this).val()==1||$(this).val()==2){
+                    $(".homepageNotice").text("185*185");
+                }else{
+                    $(".homepageNotice").text("200*90");
+                }
+            })
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>精推商品</title>
+
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/upload.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/summernote.css" rel="stylesheet">
+    <link href="css/summernote-bs3.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    精推商品
+                </div>
+            </div>
+            <div class="claimdetailMain mgt40 mgl30">
+                <div class="claimdetailMainHead">
+                    *基本信息
+                </div>
+                <div class="claimdetailMainDes">
+                    <p class="mgt30">
+                        <span class="supplyDesc">*商品ID：</span>
+                        <select class="debtManagementSelect mgl20 width318">
+                            <option value="">请选择商品ID</option>
+                            <option value="Y451222332">Y451222332</option>
+                            <option value="Y451222334">Y451222334</option>
+                            <option value="Y451222335">Y451222335</option>
+                        </select>
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*商品类目：</span>
+                        <input type="text" placeholder="商品类目根据商品ID自动获取" class="createDebtIpt width318" readonly="readonly">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*商品标题：</span>
+                        <input type="text" placeholder="商品标题自动获取" class="createDebtIpt width318" readonly="readonly">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*出售数量：</span>
+                        <input type="text" placeholder="出售商品数量自动获取" class="createDebtIpt width318" readonly="readonly">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*e债币（币）：</span>
+                        <input type="text" placeholder="请输入活动价（建议低于日常销售价）" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*现金价（元）：</span>
+                        <input type="text" placeholder="请输入活动价（建议低于日常销售价）" class="createDebtIpt width318">
+                        <p class="colff0 mgl158 mgt10">注：商品交易e债币/现金价混合支付模式</p>
+                    </p>
+                </div>
+                <div class="claimdetailMainHead">
+                    *产品详情
+                </div>
+                <a class="claimdetailBtn" onclick="del()">移动端上传说明</a>
+                <div class="claimdetailMainDes width820 borderdee">
+                    <div class="summernote">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="claimdetailFooter mgl280 mgb40">
+                <a class="btnReject fl">重置</a>
+                <a class="btnPass fr" onclick="Release()">提交</a>
+            </div>
+        </div>
+        <div class="claimdetailNotcie">
+            <div class="delContHead bg66c">
+                <span class="mgl20">移动端上传说明</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose()"/>
+            </div>
+            <div class="detailNotcieCont">
+                <p>一、基本要求</p>
+                <p>1、手机详情总体大小：图片*文字，图片不超过20张，文字不超过500字；</p>
+                <p>建议：所有图片都是本宝贝相关的图片。</p>
+                <p class="mgt20">二、图片大小</p>
+                <p>1、建议使用宽度480~620像素，高度小于等于960像素的图片；</p>
+                <p>2、格式为：JPG\JEPG\GIF\PNG；举例：可以上传一张宽度为480，高度为960像素，格式为JPG的图片。</p>
+                <p class="mgt20">三、文字要求</p>
+                <p>1、每次插入文字不能超过500个字，标点、特殊字符按照一个字计算；</p>
+                <p>2、请手动输入文字，不要复制粘贴网页上的文字，防止出现乱码；</p>
+                <p>3、以下特殊字符"<"、">"、"\"会被替换为空。</p>
+                <p>建议：不要添加太多文字，这样看起来更清晰。</p>
+            </div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/plugins/T_upload.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/summernote.min.js"></script>
+    <script src="js/plugins/summernote-zh-CN.js"></script>
+    <script>
+        $(function() {
+			$.Tupload.init({
+				fileNum: 5, // 上传文件数量
+				divId: "T_upload", // div  id
+				accept: "image/jpeg,image/x-png", // 上传文件的类型
+				fileSize  :25600000,     // 上传文件的大小
+				onSuccess: function(data, i) {
+                    // function doit(){         已经上传图片数量
+                    //     console.log(parseInt($("#fileNum").val()))
+                    // }
+                },
+                onDelete: function(i) {
+					
+				}
+            });
+            $('.summernote').summernote({
+                lang: 'zh-CN'
+            });
+        })
+        
+        //关闭按钮点击弹窗
+        function del(index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $('.claimdetailNotcie');
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() - $(".claimdetailNotcie").height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg,.claimdetailNotcie").delay("100").fadeIn();
+        }
+
+        function accountContClose(){                                      
+            $(".accountContBg,.claimdetailNotcie").delay("100").fadeOut();
+        }
+        function Release(){
+            var str= $('.summernote').code(); 
+            console.log(str)
+        }
+        
+    </script>
+</body>
+
+</html>

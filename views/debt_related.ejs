@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>债事关联</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    债事进度
+                </div>
+                <div class="debtManagementTitle">
+                    债事解除
+                </div>
+            </div>
+            <div>
+                <div class="mainContWarp animated fadeIn">
+                    <div class="debtManagementNav">
+                        <div class="debtManagementExport inlineB">
+                            导出
+                        </div>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择组织类型</option>
+                            <option value="">个人</option>
+                            <option value="">企业</option>
+                        </select>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择省份</option>
+                            <option value="">个人</option>
+                            <option value="">企业</option>
+                        </select>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择市区</option>
+                            <option value="">个人</option>
+                            <option value="">企业</option>
+                        </select>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择县/街道</option>
+                            <option value="">个人</option>
+                            <option value="">企业</option>
+                        </select>
+                        <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate" />
+                        <div class="debtManagementSearch inlineB width92 fr">
+                            查询
+                        </div>
+                    </div>
+                    <div class="ManagementTableWarp">
+                        <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable1">
+                            
+                        </table>
+                    </div>
+                </div> 
+                <div class="mainContWarp animated fadeIn" style="display:none">
+                    <div class="debtManagementNav">
+                        <div class="debtManagementExport inlineB">
+                            导出
+                        </div>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择组织类型</option>
+                            <option value="">个人</option>
+                            <option value="">企业</option>
+                        </select>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择省份</option>
+                            <option value="">个人</option>
+                            <option value="">企业</option>
+                        </select>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择市区</option>
+                            <option value="">个人</option>
+                            <option value="">企业</option>
+                        </select>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择县/街道</option>
+                            <option value="">个人</option>
+                            <option value="">企业</option>
+                        </select>
+                        <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate" />
+                        <div class="debtManagementSearch inlineB width92 fr">
+                            查询
+                        </div>
+                    </div>
+                    <div class="ManagementTableWarp">
+                        <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable2">
+                            
+                        </table>
+                    </div>   
+                </div>   
+            </div>    
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script>
+        //手动制造30条数据
+        var datas  = [];
+        for(var i=0;i<300;i++){
+            datas[i]={"a":"Q120"+i,"b":"中国总行","c":"张小丫","d":"18"+i,"e":"698","f":"582","g":"啦啦啦","h":"偿还中","id":i}
+        }
+
+        $('#reportTable1').bootstrapTable({
+            method: 'get',
+            cache: false,
+            striped: false,
+            pagination: true,
+            pageSize: 15,
+            height:640,
+            pageNumber:1,
+            pageList: [15],
+            showColumns: false,
+            showRefresh: false,
+            showExport: false,
+            exportTypes: ['csv','txt','xml'],
+            search: false,
+            clickToSelect: false,
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+            columns: 
+            [
+                {field:"a",title:"债权ID",align:"center",valign:"middle"},
+                {field:"b",title:"所属债行",align:"center",valign:"middle"},
+                {field:"c",title:"债务人",align:"center",valign:"middle"},
+                {field:"d",title:"资产金额（币）",align:"center",valign:"middle"},
+                {field:"e",title:"已还款（币）",align:"center",valign:"middle"},
+                {field:"f",title:"剩余款（币）",align:"center",valign:"middle"},
+                {field:"g",title:"债务人",align:"center",valign:"middle"},
+                {field:"h",title:"状态",align:"center",valign:"middle",
+                    formatter:function(value,row,index){
+                       var a ='<span class="colfc3">'+value+'</span>';
+                       return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a onclick=openLocation("debt_relatedRecord","' + value + '");>返款记录</a>'
+                        var e = '<a class="mgl10" onclick=openLocation("debt_relatedFile","' + value + '");>档案</a>' 
+                        return a+e;
+                    }
+                }
+            ],
+            data:datas,
+        });	
+        $('#reportTable2').bootstrapTable({
+            method: 'get',
+            cache: false,
+            striped: false,
+            pagination: true,
+            pageSize: 15,
+            height:640,
+            pageNumber:1,
+            pageList: [15],
+            showColumns: false,
+            showRefresh: false,
+            showExport: false,
+            exportTypes: ['csv','txt','xml'],
+            search: false,
+            clickToSelect: false,
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+            columns: 
+            [
+                {field:"a",title:"债权ID",align:"center",valign:"middle"},
+                {field:"b",title:"所属债行",align:"center",valign:"middle"},
+                {field:"c",title:"债务人",align:"center",valign:"middle"},
+                {field:"d",title:"资产金额（币）",align:"center",valign:"middle"},
+                {field:"e",title:"已还款（币）",align:"center",valign:"middle"},
+                {field:"f",title:"剩余款（币）",align:"center",valign:"middle"},
+                {field:"g",title:"债务人",align:"center",valign:"middle"},
+                {field:"h",title:"状态",align:"center",valign:"middle",
+                    formatter:function(value,row,index){
+                       var a ='<span class="colf3b">'+value+'</span>';
+                       return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a onclick=openLocation("debt_relatedRecord","' + value + '");>返款记录</a>'
+                        var e = '<a class="mgl10" onclick=openLocation("debt_relatedFile","' + value + '");>档案</a>' 
+                        return a+e;
+                    }
+                }
+            ],
+            data:datas,
+        });	
+    </script>
+</body>
+
+</html>

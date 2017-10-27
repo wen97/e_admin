@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>用户-用户详情</title>
+
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/summernote.css" rel="stylesheet">
+    <link href="css/summernote-bs3.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead bgf2f">
+                <div class="debtManagementTitle TitleActive">
+                    用户详情
+                </div>
+                <div class="noticepushBtn fr cola4a mgt10" onclick="openLocation('user_Userslist')">
+                    <i class="fa fa-angle-left"></i>
+                    <span>返回</span>
+                </div>
+                <div class="noticepushBtn fr cola4a mgt10" onclick="onReload()">
+                    <i class="fa fa-refresh"></i>
+                    <span>刷新</span>
+                </div>
+            </div>
+            <div class="releaseMain">
+                <ul class="userdetailUl">
+                    <li class="fl bgfbf">
+                        <img src="img/userImg.png" class="userdetailImg"/>
+                        <p class="mgt20">1821010176325</p>
+                        <div class="userdetailMember mgt10">
+                            普通会员
+                        </div>
+                    </li>
+                    <li class="fl">
+                        <div class="userdetailLi">
+                            <div class="userdetailItem fl">
+                                昵称
+                            </div>
+                            <div>
+                                小蚂蚁
+                            </div>
+                        </div>
+                        <div class="userdetailLi">
+                            <div class="userdetailItem fl">
+                                性别
+                            </div>
+                            <div>
+                                男
+                            </div> 
+                        </div>
+                        <div class="userdetailLi borderNone">
+                            <div class="userdetailItem fl">
+                                所属债行
+                            </div>
+                            <div>
+                                浙江省杭州行
+                            </div>   
+                        </div>
+                    </li>
+                    <li class="fr">
+                        <div class="userdetailLi">
+                            <div class="userdetailItem fl">
+                                手机
+                            </div>
+                            <div>
+                                18210176325
+                            </div>
+                        </div>
+                        <div class="userdetailLi">
+                            <div class="userdetailItem fl">
+                                用户来源
+                            </div>
+                            <div>
+                                APP端
+                            </div> 
+                        </div>
+                        <div class="userdetailLi borderNone">
+                            <div class="userdetailItem fl">
+                                注册时间
+                            </div>
+                            <div>
+                                2017-12-12 10:00
+                            </div>   
+                        </div>
+                    </li>
+                </ul>
+                <div class="userdetailMain">
+                    <div>
+                        <img src="img/userdetailIcon.png" class="userdetailIcon">
+                        <span class="fn14">统计信息</span>
+                    </div>
+                    <table class="countTable mgt10" border="0" cellspacing="1">
+                        <tr class="bgfaf">
+                            <td>余额(元)</td>
+                            <td>余额(币)</td>
+                            <td>消费金额(元)</td>
+                            <td>消费金额(币)</td>
+                            <td>订单数量</td>
+                            <td>商品评价</td>
+                            <td>退货记录</td>
+                            <td>登录次数</td>
+                        </tr>
+                        <tr>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0.00</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </table>
+                    <div class="mgt40">
+                        <img src="img/userdetailIcon.png" class="userdetailIcon">
+                        <span class="fn14">收货地址</span>
+                    </div>
+                    <table class="countTable mgt10" border="0" cellspacing="1">
+                        <tr class="bgfaf">
+                            <td>姓名</td>
+                            <td>手机号</td>
+                            <td>详细地址</td>
+                            <td>默认地址</td>
+                        </tr>
+                        <tr>
+                            <td>啊啊</td>
+                            <td>18210126351</td>
+                            <td>北京市海定区街道24号</td>
+                            <td>
+                                <div class="switch switch-small myswitch">
+                                    <input type="checkbox" checked name="status" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>啊啊</td>
+                            <td>18210126351</td>
+                            <td>北京市海定区街道24号</td>
+                            <td>
+                                <div class="switch switch-small myswitch">
+                                    <input type="checkbox" checked name="status" />
+                                </div>
+                            </td>
+                        </tr> 
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/summernote.min.js"></script>
+    <script src="js/plugins/summernote-zh-CN.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script>
+       function onReload(){
+            window.location.reload();
+       }; 
+       $('[name="status"]').bootstrapSwitch({  
+            onText:"ON",  
+            offText:"OFF",  
+            onColor:"info",  
+            offColor:"info",  
+            size:"small",  
+            onSwitchChange:function(event,state){  
+                if(state==true){  
+                    $(this).val("0");
+                }else{  
+                    $(this).val("1");  
+                }  
+            }  
+        });
+    </script>
+</body>
+
+</html>

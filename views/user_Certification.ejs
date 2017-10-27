@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>用户-实名认证</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/zoomify.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    实名认证
+                </div>
+            </div>
+            <div class="noticepushMain">
+               <div class="noticepushNav">
+                    <div class="pushNavhead">
+                        <span class="searchImg"></span>
+                        <span>筛选查询</span>
+                        <span class="pushNavSearch fr">查询结果</span>
+                    </div>
+                    <div class="mgt15">
+                        <span class="mgl20">会员等级：</span>
+                        <select class="debtManagementSelect col666 width90">
+                            <option value="0">全部</option>
+                            <option value="1">admin</option>
+                            <option value="2">省级行</option>
+                        </select>
+                        <span class="mgl20">日期：</span>
+                        <input placeholder="开始日期（年/月/日/时）" class="managementDate " id="managementStart" />
+                        <span class="mgl5">——</span>
+                        <input placeholder="结束日期（年/月/日/时）" class="managementDate" id="managementEnd" />
+                        <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate">
+                        <div class="debtManagementExport inlineB mgl20" onclick="$('#reportTable').tableExport({ type: 'excel', escape: 'false'})">
+                            导出
+                        </div>
+                    </div>
+               </div>
+               <div class="noticepushTableWarp">
+                    <div class="pushTablehead">
+                        <ul class="commodityUl">
+                            <li class="commodClick" data-type="0"><span>待审核</span></li>
+                            <li data-type="1"><span>未通过</span></li>
+                            <li data-type="2"><span>已通过</span></li>
+                        </ul>
+                    </div>
+                    <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable"></table>
+                </div>
+            </div>
+        </div>
+        <div class="authenCont">
+            <div class="delContHead">
+                <span class="mgl20">实名认证</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('authenCont','accountContBg')"/>
+            </div>
+            <p class="mgt30">
+                <span class="supplyDesc">真实姓名：</span>
+                <span>啊啊啊</span>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">身份证号：</span>
+                <span>330326199308554118984</span>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">手机号码：</span>
+                <span>1886894564944</span>
+            </p>
+            <p class="mgt15 mgb40">
+                <span class="supplyDesc">电子证件：</span>
+                <img src="img/licenseImg.png" class="authenImg">
+                <span class="enlargeBtn">查看大图</span>
+            </p>
+            <div class="deliverFooter">
+                <div class="linkpushSubmit mgr20 bg949" onclick="showBox('authrejectCont','accountContBg')">
+                    驳回
+                </div>
+                <div class="linkpushSubmit">
+                    通过
+                </div>
+            </div>
+        </div>
+        <div class="authrejectCont">
+            <div class="delContHead">
+                <span class="mgl20">驳回原因</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('authrejectCont')"/>
+            </div>
+            <textarea class="authrejectMain" placeholder="请输入驳回认证原因，告知用户~" maxlength="30"></textarea>
+            <div class="colbab fr mgr20 mgt20">注：限制30字内</div>
+            <div class="rejectSubmit mgt60">立即发送</div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/plugins/zoomify.js"></script>
+    <script>
+        
+    //手动制造30条数据
+	var datas  = [];
+	for(var i=0;i<300;i++){
+		datas[i]={"a":"2017-12-12 10:00","b":"1886894485698","c":"浙江省烟台市行","d":"实名认证","e":"啊啊","f":"330326198254446846"}
+	}
+
+
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:640,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"a",title:"注册时间",align:"center",valign:"middle"},
+				{field:"b",title:"手机号码",align:"center",valign:"middle"},
+                {field:"c",title:"所属债行",align:"center",valign:"middle"},
+                {field:"d",title:"认证类型",align:"center",valign:"middle"},
+                {field:"e",title:"姓名",align:"center",valign:"middle"},
+                {field:"f",title:"身份证",align:"center",valign:"middle"},
+                {field:"id",title:"状态",align:"center",valign:"middle",
+                    formatter:function(value,row,index){
+                        var e = '<span class="colff9">待审</span>';  
+                        return e;
+                    } 
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var e = '<a class="col6cc" onclick=showBox("authenCont","' + value + '")>审核</a> ';  
+                        return e;
+                    }
+                }
+			],
+            data:datas,
+		});										
+        //按钮点击弹窗
+        function showBox(dom,index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $("."+dom);
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() -$box.height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg").delay("100").fadeIn();
+            $("."+dom).delay("100").fadeIn();
+        };
+
+        function accountContClose(dom,contbg){ 
+            if(contbg!=null){
+                $("."+contbg).delay("100").fadeOut();
+            }                                    
+            $("."+dom).delay("100").fadeOut();
+        };
+        //状态点击
+        $(".commodityUl li").click(function(){
+            $(this).addClass("commodClick").siblings().removeClass("commodClick");
+            console.log($(this).data("type"));
+        })
+        $(".enlargeBtn").click(function(){                   //图片点击放大
+            $(".authenImg").zoomify('zoomIn');
+        });
+    </script>
+</body>
+
+</html>

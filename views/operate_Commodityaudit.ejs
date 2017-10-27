@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>商品审核</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    活动商品审核
+                </div>
+            </div>
+            <div class="noticepushMain">
+               <div class="noticepushNav">
+                    <div class="pushNavhead">
+                        <span class="searchImg"></span>
+                        <span>筛选查询</span>
+                        <span class="pushNavSearch fr">查询结果</span>
+                    </div>
+                    <p class="mgt15">
+                        <span class="mgl20">搜素标题：</span>
+                        <input type="text" placeholder="请输入商品标题名称" class="managementDate width138" />
+                        <span class="mgl20">活动类型：</span>
+                        <select class="debtManagementSelect col666">
+                            <option value="0">全部</option>
+                            <option value="1">admin</option>
+                            <option value="2">省级行</option>
+                        </select>
+                        <span class="mgl20">商品类目：</span>
+                        <select class="debtManagementSelect col666">
+                            <option value="0">全部</option>
+                            <option value="1">admin</option>
+                            <option value="2">省级行</option>
+                        </select>
+                    </p>
+               </div>
+               <div class="noticepushTableWarp">
+                    <div class="pushTablehead">
+                        <ul class="commodityUl">
+                            <li class="commodClick" data-type="0"><span>待审核</span></li>
+                            <li data-type="1"><span>已上线</span></li>
+                        </ul>
+                        <div class="dropdown fr cola4a">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                排序方式
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">按时间</a></li>
+                                <li><a href="#">按金额</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable"></table>
+                </div>
+            </div>
+        </div>
+        <div class="auditCont">
+            <div class="delContHead">
+                <span class="mgl20">商品审核</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('auditCont','accountContBg')"/>
+            </div>
+            <p class="mgt15">
+                <span class="supplyDesc">商品标题：</span>
+                <span>啊啊啊啊啊啊啊啊啊啊啊</span>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">商品审核：</span>
+                <input type="radio" name="goodsAudit" value="1" class="verTextb" checked="checked">
+                <span class="verMiddle mgr20">审核通过</span> 
+                <input type="radio" name="goodsAudit" value="0" class="verTextb">
+                <span class="verMiddle">审核不通过</span>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">反馈详情：</span>
+                <textarea class="createDebtIpt width262 goodsTextarea mgl0" placeholder="请输入内容~"></textarea>
+            </p>
+            <div class="deliverFooter mgt40">
+                <a class="receiptSure fr mgt15 mgr20">确定</a>
+                <a class="receiptCancel fr mgt15 mgr15"  onclick="accountContClose('auditCont','accountContBg')">取消</a>
+            </div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script>
+        
+    //手动制造30条数据
+	var datas  = [];
+	for(var i=0;i<300;i++){
+		datas[i]={"a":"E42541"+i,"b":"家具","c":"精推商品","d":"啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊","e":"120.00","f":"120.00","g":"5000","h":"小蚂蚁","id":i}
+	}
+
+
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:640,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"a",title:"编号",align:"center",valign:"middle"},
+				{field:"b",title:"商品类目",align:"center",valign:"middle"},
+                {field:"c",title:"活动类型",align:"center",valign:"middle"},
+                {field:"d",title:"标题",align:"center",valign:"middle"},
+                {field:"e",title:"e债币(币)",align:"center",valign:"middle"},
+                {field:"f",title:"现金价(元)",align:"center",valign:"middle"},
+                {field:"g",title:"数量",align:"center",valign:"middle"},
+                {field:"h",title:"商家",align:"center",valign:"middle"},
+                {field:"id",title:"状态",align:"center",valign:"middle",
+                    formatter:function(value,row,index){
+                        var e = '<span>未审核</span>';  
+                        return e;
+                    } 
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var e = '<a class="col6cc" onclick=showBox("auditCont","' + value + '")>审核</a> ';  
+                        return e;
+                    }
+                }
+			],
+            data:datas,
+            onPageChange: function (number, size) {
+                $('[name="status"]').bootstrapSwitch({  
+                    onText:"ON",  
+                    offText:"OFF",  
+                    onColor:"info",  
+                    offColor:"info",  
+                    size:"small",  
+                    onSwitchChange:function(event,state){  
+                        if(state==true){  
+                            $(this).val("0");
+                        }else{  
+                            $(this).val("1");  
+                        }  
+                        console.log($(this).data("id"));
+                    }  
+                })
+            }
+		});										
+        //按钮点击弹窗
+        function showBox(dom,index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $("."+dom);
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() -$box.height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg").delay("100").fadeIn();
+            $("."+dom).delay("100").fadeIn();
+        };
+
+        function accountContClose(dom,contbg){ 
+            if(contbg!=null){
+                $("."+contbg).delay("100").fadeOut();
+            }                                    
+            $("."+dom).delay("100").fadeOut();
+        };
+        $('[name="status"]').bootstrapSwitch({  
+            onText:"ON",  
+            offText:"OFF",  
+            onColor:"info",  
+            offColor:"info",  
+            size:"small",  
+            onSwitchChange:function(event,state){  
+                if(state==true){  
+                    $(this).val("0");
+                }else{  
+                    $(this).val("1");  
+                }  
+                console.log($(this).data("id"));
+            }  
+        });
+        //状态点击
+        $(".commodityUl li").click(function(){
+            $(this).addClass("commodClick").siblings().removeClass("commodClick");
+            console.log($(this).data("type"));
+        })
+    </script>
+</body>
+
+</html>

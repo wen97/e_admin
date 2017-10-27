@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>用户-用户列表</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    用户列表
+                </div>
+            </div>
+            <div class="noticepushMain">
+               <div class="noticepushNav height160">
+                    <div class="pushNavhead">
+                        <span class="searchImg"></span>
+                        <span>筛选查询</span>
+                        <span class="pushNavSearch fr">查询结果</span>
+                    </div>
+                    <div class="mgt15">
+                        <div>
+                            <span class="mgl20">用户账号：</span>
+                            <input type="text" placeholder="请输入用户账号" class="managementDate">
+                            <span class="mgl20">用户账号：</span>
+                            <input type="text" placeholder="请输入用户昵称" class="managementDate">
+                            <span class="mgl20">用户账号：</span>
+                            <select class="debtManagementSelect col666">
+                                <option value="0">全部</option>
+                                <option value="1">admin</option>
+                                <option value="2">省级行</option>
+                            </select>
+                            <div class="debtManagementExport inlineB mgl20" onclick="$('#reportTable').tableExport({ type: 'excel', escape: 'false'})">
+                                导出
+                            </div>
+                        </div>
+                        <div class="mgt20">
+                            <span class="mgl20">用户账号：</span>
+                            <input placeholder="开始日期（年/月/日/时）" class="managementDate " id="managementStart" />
+                            <span class="mgl5">——</span>
+                            <input placeholder="结束日期（年/月/日/时）" class="managementDate" id="managementEnd" />
+                        </div>
+                    </div>
+               </div>
+               <div class="noticepushTableWarp">
+                    <div class="pushTablehead">
+                        <span class="catalogImg"></span>
+                        <span>数据列表</span>
+                        <div class="dropdown fr cola4a">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                排序方式
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">按最近</a></li>
+                                <li><a href="#">按最早</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown fr cola4a mgr10">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                活动推送
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a onclick="showBox('linkpushCont')">链接</a></li>
+                                <li><a onclick="showBox('activitypushCont')">活动</a></li>
+                                <li><a onclick="showBox('goodspushCont')">商品</a></li>
+                            </ul>
+                        </div>
+                        <div class="noticepushBtn fr cola4a" onclick="showBox('couponCont')">
+                            赠送优惠券
+                        </div>
+                    </div>
+                    <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable"></table>
+                </div>
+            </div>
+        </div>
+
+        <div class="linkpushCont">
+            <div class="delContHead">
+                <span class="mgl20">活动推送</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('linkpushCont','accountContBg')"/>
+            </div>
+            <div class="mgl50 mgb20">
+                <div class="mgt20">
+                    <span>推送类型：</span>
+                    <span class="mgl10">链接</span>
+                </div> 
+                <div class="mgt15 linkpushItem">
+                    <span>推送链接：</span>  
+                    <input type="text" placeholder="请输入推送链接" class="managementDate width372">
+                </div>
+                <div class="mgt15">
+                    <span>推送标题：</span>  
+                    <input type="text" placeholder="请输入推送标题" class="managementDate width372">
+                </div>
+                <div class="mgt15">
+                    <span>推送内容：</span>  
+                    <input type="text" placeholder="请输入推送内容" class="managementDate width372">
+                    <p class="fn12 colbab mgl78 mgt10">APP推送标题不能超过14个字，内容不能超过30个字。</p>
+                </div>  
+            </div>
+            <div class="adddebtFoot">
+                <div class="linkpushSubmit mgr20 bg949" onclick="accountContClose('linkpushCont','accountContBg')">
+                    取消
+                </div>
+                <div class="linkpushSubmit">
+                    确定
+                </div>
+            </div>
+        </div>
+
+        <div class="activitypushCont">
+            <div class="delContHead">
+                <span class="mgl20">活动推送</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('activitypushCont','accountContBg')"/>
+            </div>
+            <div class="mgl50 mgb20">
+                <div class="mgt20">
+                    <span>推送类型：</span>
+                    <span class="mgl10">活动</span>
+                </div> 
+                <div class="mgt15 linkpushItem">
+                    <span>选择活动：</span>  
+                    <div class="noticepushBtn mgl10" onclick="showBox('selectedCont')">选择活动</div>
+                </div>
+                <div class="mgt15">
+                    <span>推送标题：</span>  
+                    <input type="text" placeholder="请输入推送标题" class="managementDate width372">
+                </div>
+                <div class="mgt15">
+                    <span>推送内容：</span>  
+                    <input type="text" placeholder="请输入推送内容" class="managementDate width372">
+                    <p class="fn12 colbab mgl78 mgt10">APP推送标题不能超过14个字，内容不能超过30个字。</p>
+                </div>  
+            </div>
+            <div class="adddebtFoot">
+                <div class="linkpushSubmit mgr20 bg949" onclick="accountContClose('activitypushCont','accountContBg')">
+                    取消
+                </div>
+                <div class="linkpushSubmit">
+                    确定
+                </div>
+            </div>
+        </div>
+
+        <div class="selectedCont width650">
+            <div class="delContHead">
+                <span class="mgl20">选择活动</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('selectedCont')"/>
+            </div>
+            <div class="selectedMain">
+                <ul class="selectedTab mgl0">
+                    <li class="tabClick" data-type="0">精选活动</li>
+                    <li data-type="1">精推商品</li>
+                </ul>
+                <div class="selectTablewarp">
+                    <table class="debtManagementTable" id="selectTable" border="0" cellspacing="1"></table>
+                </div>
+            </div>
+        </div>
+
+        <div class="goodspushCont">
+            <div class="delContHead">
+                <span class="mgl20">活动推送</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('goodspushCont','accountContBg')"/>
+            </div>
+            <div class="mgl50 mgb20">
+                <div class="mgt20">
+                    <span>推送类型：</span>
+                    <span class="mgl10">商品</span>
+                </div> 
+                <div class="mgt15 linkpushItem">
+                    <span>选择商品：</span>  
+                    <div class="noticepushBtn mgl10" onclick="showBox('selectedgoodsCont')">选择商品</div>
+                </div>
+                <div class="mgt15">
+                    <span>推送标题：</span>  
+                    <input type="text" placeholder="请输入推送标题" class="managementDate width372">
+                </div>
+                <div class="mgt15">
+                    <span>推送内容：</span>  
+                    <input type="text" placeholder="请输入推送内容" class="managementDate width372">
+                    <p class="fn12 colbab mgl78 mgt10">APP推送标题不能超过14个字，内容不能超过30个字。</p>
+                </div>  
+            </div>
+            <div class="adddebtFoot">
+                <div class="linkpushSubmit mgr20 bg949" onclick="accountContClose('goodspushCont','accountContBg')">
+                    取消
+                </div>
+                <div class="linkpushSubmit">
+                    确定
+                </div>
+            </div>
+        </div>
+
+        <div class="selectedgoodsCont width650">
+            <div class="delContHead">
+                <span class="mgl20">选择商品</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('selectedgoodsCont')"/>
+            </div>
+            <div class="selectedMain">
+                <input type="text" placeholder="请输入商品名称" class="managementDate width268 mgl0">
+                <span class="goodSearch">
+                    <i class="searchImg"></i>
+                </span>
+                <div class="selectTablewarp mgt10">
+                    <table class="debtManagementTable" id="selectgoodsTable" border="0" cellspacing="1"></table>
+                </div>
+            </div>
+        </div>
+
+        <div class="couponCont width650">
+            <div class="delContHead">
+                <span class="mgl20">赠送优惠券</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('couponCont','accountContBg')"/>
+            </div>
+            <div class="selectedMain">
+                <input type="text" placeholder="请输入优惠券名称" class="managementDate width268 mgl0">
+                <span class="goodSearch">
+                    <i class="searchImg"></i>
+                </span>
+                <div class="selectTablewarp mgt10">
+                    <table class="debtManagementTable" id="couponTable" border="0" cellspacing="1"></table>
+                </div>
+            </div>
+            <div class="adddebtFoot">
+                <div class="linkpushSubmit mgr20 bg949" onclick="accountContClose('couponCont','accountContBg')">
+                    取消
+                </div>
+                <div class="linkpushSubmit">
+                    确定
+                </div>
+            </div>
+        </div>
+
+        <div class="delCont">
+            <div class="delContHead">
+                <span class="mgl20">删除公告</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('delCont','accountContBg')"/>
+            </div>
+            <p class="delNotice">您确定要删除此公告信息吗？</p>
+            <div class="delBtnwarp">
+                <a class="delCancel" onclick="accountContClose()">取消</a>
+                <a class="delSure">确定</a>
+            </div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/plugins/tableExport.js"></script>
+    <script src="js/plugins/jquery.base64.js"></script>
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+
+    //手动制造30条数据
+	var datas  = [];
+	for(var i=0;i<300;i++){
+		datas[i]={"a":"2017-12-12 10:00","b":"18210465584","c":"小蚂蚁","d":"普通会员","id":i,"e":"0.00","f":"0.00","g":"15.00","h":"15.00","i":"10","j":"满200元可用","k":"2017-12-12至2017-12-15"}
+	}
+
+
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 12,
+            height:640,
+			pageNumber:1,
+			pageList: [12],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+                {field:"checked",checkbox:true},
+				{field:"a",title:"注册时间",align:"center",valign:"middle"},
+				{field:"b",title:"手机号",align:"center",valign:"middle"},
+                {field:"c",title:"昵称",align:"center",valign:"middle"},
+                {field:"d",title:"会员等级",align:"center",valign:"middle"},
+                {field:"e",title:"余额(元)",align:"center",valign:"middle"},
+                {field:"f",title:"余额(币)",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '账户启用状态',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<div class="switch switch-small myswitch"><input type="checkbox" checked name="status" data-id="'+value+'"/></div>';
+                        return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a class="col6cc" onclick=openLocation("user_Usersdetail",'+value+')>查看</a> ';
+                        var e = '<a class="col6cc mgl10"onclick=openLocation("user_Usersedit",'+value+')>编辑</a> ';  
+                        var d = '<a class="col6cc mgl10" onclick=showBox("delCont","' + value + '")>删除</a> ';
+                        return a+e+d;
+                    }
+                }
+            ],
+            data:datas,
+            onPageChange: function (number, size) {
+                $('[name="status"]').bootstrapSwitch({  
+                    onText:"ON",  
+                    offText:"OFF",  
+                    onColor:"info",  
+                    offColor:"info",  
+                    size:"small",  
+                    onSwitchChange:function(event,state){  
+                        if(state==true){  
+                            $(this).val("0");
+                        }else{  
+                            $(this).val("1");  
+                        }  
+                        console.log($(this).data("id"));
+                    }  
+                })
+            }
+        });	
+        $('#selectTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:340,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"b",title:"标题",align:"center",valign:"middle"},
+				{field:"g",title:"开始时间",align:"center",valign:"middle"},
+                {field:"h",title:"结束时间",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a class="col66c">选择</a> ';  
+                        return a;
+                    }
+                }
+            ],
+            data:datas
+        });	
+        $('#selectgoodsTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:340,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"b",title:"标题",align:"center",valign:"middle"},
+				{field:"g",title:"价格(元)",align:"center",valign:"middle"},
+                {field:"h",title:"价格(币)",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a class="col66c">选择</a> ';  
+                        return a;
+                    }
+                }
+            ],
+            data:datas
+        });	
+        $('#couponTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:340,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+                {field:"checked",checkbox:true},
+				{field:"b",title:"优惠券名称",align:"center",valign:"middle"},
+				{field:"g",title:"面额",align:"center",valign:"middle"},
+                {field:"i",title:"剩余张数",align:"center",valign:"middle"},
+                {field:"j",title:"使用条件",align:"center",valign:"middle"},
+                {field:"k",title:"使用条件",align:"center",valign:"middle"}
+            ],
+            data:datas
+		});									
+        //按钮点击弹窗
+        function showBox(dom,index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $("."+dom);
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() -$box.height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg").delay("100").fadeIn();
+            $("."+dom).delay("100").fadeIn();
+        };
+
+        function accountContClose(dom,contbg){ 
+            if(contbg!=null){
+                $("."+contbg).delay("100").fadeOut();
+            }                                    
+            $("."+dom).delay("100").fadeOut();
+        };
+        $('[name="status"]').bootstrapSwitch({  
+            onText:"ON",  
+            offText:"OFF",  
+            onColor:"info",  
+            offColor:"info",  
+            size:"small",  
+            onSwitchChange:function(event,state){  
+                if(state==true){  
+                    $(this).val("0");
+                }else{  
+                    $(this).val("1");  
+                }  
+                console.log($(this).data("id"));
+            }  
+        })
+        //菜单按钮切换
+        $(".selectedTab li").click(function(){
+            $(this).addClass("tabClick").siblings().removeClass("tabClick");
+            console.log($(this).data("type"));
+        })
+    </script>
+</body>
+
+</html>

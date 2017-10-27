@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>转账/充值</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="edebtimgWarp">
+            <div class="platformimgCont bgffc fl">
+                <img src="img/edebtCoin.png" class="edebtImg">
+                <p class="fn18">1000.00</p>
+                <p>累计转账额度（e债币）</p>
+                <div class="transferBtn">
+                    转账
+                </div>
+            </div>
+            <div class="platformimgCont bgff9 fl mgl2p">
+                <img src="img/edebtCoin.png" class="edebtImg">
+                <p class="fn18">1000.00</p>
+                <p>累计充值额度（e债币）</p>
+                <div class="transferBtn">
+                    充值
+                </div>
+            </div>
+            <div class="platformimgCont bg6c9 fl mgl2p">
+                <img src="img/edebtCoin.png" class="edebtImg">
+                <p class="fn18">1000.00</p>
+                <p>累计充值额度（人民币）</p>
+                <div class="transferBtn">
+                    充值
+                </div>
+            </div>
+        </div>
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    转账/充值
+                </div>
+            </div>
+            <div class="debtManagementNav">
+                <span>类型：</span>
+                <select class="debtManagementSelect width138 mgl0" style="color:#666;">
+                    <option value="0">全部</option>
+                    <option value="1">转账</option>
+                    <option value="2">充值</option>
+                </select>
+                <span class="mgl15">手机：</span>
+                <input type="text" placeholder="请输入手机号码" class="createDebtIpt width138 mgl0">
+                <span class="mgl15">时间：</span>
+                <input placeholder="开始日期（年/月/日/时）" class="managementDate mgl0" id="managementStart" />
+                    <span class="mgl15">——</span>
+                <input placeholder="结束日期（年/月/日/时）" class="managementDate mgl20" id="managementEnd" />
+                <div class="debtManagementSearch inlineB width92 fr">
+                    查询
+                </div>
+            </div>
+            <ul class="tradingNav mgt30">
+                <li class="tradingClick" data-type="0"><span>全部</span></li>
+                <li data-type="1"><span>转账记录(币)</span></li>
+                <li data-type="2"><span>充值记录(币)</span></li>
+                <li data-type="3"><span>充值记录(元)</span></li>
+            </ul>
+            <div class="transferTableWarp">
+                <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable">
+                </table>
+            </div>
+        </div>
+        <div class="delCont">
+            <div class="delContHead">
+                <span class="mgl20">删除数据</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('delCont','accountContBg')"/>
+            </div>
+            <p class="delNotice">您确定要删除此数据</p>
+            <div class="delBtnwarp">
+                <a class="delCancel" onclick="accountContClose('delCont','accountContBg')">取消</a>
+                <a class="delSure">确定</a>
+            </div>
+        </div>
+        <div class="transdetailCont">
+            <div class="delContHead">
+                <span class="mgl20">转账</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('transdetailCont','accountContBg')"/>
+            </div>
+            <p class="mgt30">
+                <span class="supplyDesc">手机：</span>
+                <input type="text" placeholder="请输入对方手机号" class="createDebtIpt width210">
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">姓名：</span>
+                <input type="text" placeholder="请输入对方真实姓名" class="createDebtIpt width210">
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">金额(币)：</span>
+                <input type="text" placeholder="请输入金额" class="createDebtIpt width210">
+            </p>
+            <div class="transSure">确定</div>
+        </div>
+        <div class="detailCont">
+            <div class="delContHead">
+                <span class="mgl20">详情</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('detailCont','accountContBg')"/>
+            </div>
+            <p class="mgt30">
+                <span class="supplyDesc">手机：</span>
+                <span class="colc5c mgl10">182101750856</span>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">姓名：</span>
+                <span class="colc5c mgl10">阿刘</span>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">金币(币)：</span>
+                <span class="colc5c mgl10">4512.00</span>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">类型：</span>
+                <span class="colc5c mgl10">转账</span>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">操作员：</span>
+                <span class="colc5c mgl10">admin</span>
+            </p>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/plugins/tableExport.js"></script>
+    <script src="js/plugins/jquery.base64.js"></script>
+
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+
+    //手动制造30条数据
+	var datas  = [];
+	for(var i=0;i<300;i++){
+		datas[i]={"a":"4511258166659"+i,"b":"2017-10-12 10:20","c":"18210175684","d":"张三","e":"充值","f":"100.00","id":i}
+	}
+
+
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:640,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"a",title:"交易号",align:"center",valign:"middle"},
+				{field:"b",title:"时间",align:"center",valign:"middle"},
+                {field:"c",title:"手机",align:"center",valign:"middle"},
+                {field:"d",title:"姓名",align:"center",valign:"middle"},
+                {field:"e",title:"类型",align:"center",valign:"middle"},
+                {field:"f",title:"金额(元)",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a  class="colff0" onclick=showBox("delCont","' + value + '")>删除</a> '; 
+                        var e = '<a class="mgl10" onclick=showBox("transdetailCont","' + value + '")>详情</a> '; 
+                        return a+e;
+                    }
+                }
+			],
+			data:datas,
+		});										
+        //详情按钮点击弹窗
+        function showBox(dom,index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $("."+dom);
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() -$box.height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg").delay("100").fadeIn();
+            $("."+dom).delay("100").fadeIn();
+        };
+
+        function accountContClose(dom,contbg){ 
+            if(contbg!=null){
+                $("."+contbg).delay("100").fadeOut();
+            }                                    
+            $("."+dom).delay("100").fadeOut();
+        };
+        //订单状态点击
+        $(".tradingNav li").click(function(){
+            $(this).addClass("tradingClick").siblings().removeClass("tradingClick");
+            console.log($(this).data("type"));
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>供应——创建账户</title>
+    
+    <link href="css/bootstrap_Grid_system.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/zoomify.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="claimdetailCont">
+            <div class="claimdetailHead">
+                <a href="supply_createAccount" class="colbebA">创建账户&gt;</a>
+                <span class="col000">企业入驻</span>
+            </div>
+            <div class="claimdetailMain">
+                <div class="claimdetailMainHead">
+                    店铺管理人基本信息
+                </div>
+                <div class="claimdetailMainDes">
+                    <p class="mgt15">
+                        <span class="supplyDesc">*店铺名称：</span>
+                        <input type="text" placeholder="请输入店铺名称" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*供应类型：</span>
+                        <select class="createDebtIpt width152">
+                            <option value="">请选择供应类型</option>
+                            <option value="0">普通会员</option>
+                            <option value="1">债事会员</option>
+                        </select>
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*平台账号：</span>
+                        <input type="text" placeholder="请输入注册时预留手机号" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*入驻人名称：</span>
+                        <input type="text" placeholder="请输入管理人的真实姓名" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*入驻人手机号：</span>
+                        <input type="text" placeholder="请输入管理人常用手机号，不支持座机号" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*身份证号：</span>
+                        <input type="text" placeholder="请输入管理人的证件号（身份证）" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*收货地址：</span>
+                        <select id="localProvince" class="createDebtIpt width152"></select>  
+                        <select id="localCity" class="createDebtIpt width152 mgl10"></select>
+                        <input type="text" class="createDebtIpt width385 mgl10" placeholder="请输入详细地址"/>
+                    </p>
+                </div>
+                <div class="claimdetailMainHead">
+                    入驻人基本信息
+                </div>
+                <div class="claimdetailMainDes">
+                    <p class="mgt15">
+                        <span class="supplyDesc">*是否三证合一：</span>
+                        <input type="radio" name="certificate" value="1" class="verMiddle mgl20" checked="checked">
+                        <span class="verMiddle">是</span> 
+                        <input type="radio" name="certificate" value="0" class="verMiddle mgl30">
+                        <span class="verMiddle">否</span>
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*单位名称：</span>
+                        <input type="text" placeholder="请输入营业执照单位名称" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*企业法人手机号：</span>
+                        <input type="text" placeholder="请输入负责人常用手机号，不支持座机号" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*再次输入手机号：</span>
+                        <input type="text" placeholder="请再次输入手机号" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*企业法人身份证号：</span>
+                        <input type="text" placeholder="请输入企业法人证件号（身份证号）" class="createDebtIpt width318">
+                        <p class="colff0 mgl158 mgt10">注：请确认您的身份证号填写无误，该身份证号必须与您上传的身份证账号一致</p>
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*公司经营地址：</span>
+                        <input type="text" placeholder="请输入公司地址" class="createDebtIpt width620">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*统一社会信用代码：</span>
+                        <input type="text" placeholder="请输入18位统一社会信用代码" class="createDebtIpt width504">
+                        <p class="colff0 mgl158 mgt10">注：三证合一的营业执照，请全部填写统一社会信用代码，非三证合一的营业执照</p>
+                        <p class="colff0 mgl158 mgt10">请在统一社会信用代码处填写营业执照注册号，请根据您的营业执照类型依次填写</p>
+                    </p>
+                </div>
+                <div class="claimdetailMainHead">
+                    资质信息上传（注：上传的图片大小在5M以内，仅支持JPG、PNG格式）
+                </div>
+                <div class="supplyItem mgt25">
+                    <div class="fl">
+                        <span class="verMiddle supplyDesc">*身份证正面：</span>
+                        <img src="img/uploadImg.png" class="supplyIdcard verMiddle">
+                    </div>
+                    <div class="inlineB mgl30">
+                        <a class="uploadBtn mgt35">
+                            上传
+                            <input type="file" name="file" class="iptFile">
+                        </a>
+                        <p class="colb0b fn12 mgt35 lineH26">1、必须看清楚证件号码且证件号码不能被遮挡</p>
+                        <p class="colb0b fn12 lineH26">2、照片必须支持jpg、png格式</p>
+                    </div>
+                </div>
+                <div class="supplyItem mgt30">
+                    <div class="fl">
+                        <span class="verMiddle supplyDesc">*身份证反面：</span>
+                        <img src="img/uploadImg.png" class="supplyIdcard verMiddle">
+                    </div>
+                    <div class="inlineB mgl30">
+                        <a class="uploadBtn mgt35">
+                            上传
+                            <input type="file" name="file" class="iptFile">
+                        </a>
+                        <p class="colb0b fn12 mgt35 lineH26">1、必须看清楚证件号码且证件号码不能被遮挡</p>
+                        <p class="colb0b fn12 lineH26">2、照片必须支持jpg、png格式</p>
+                    </div>
+                </div>
+                <div class="supplyItem mgt30">
+                    <span class="verMiddle supplyDesc">*身份证有效期：</span>
+                    <input placeholder="开始日期（年/月/日/时）" class="managementDate mgl20" id="createStart" />
+                    <span class="mgl10">至</span>
+                    <input placeholder="结束日期（年/月/日/时）" class="managementDate " id="createEnd" />
+                    <input type="checkbox" class="supplyTerm">
+                    <span class="verMiddle">长期有效</span>
+                </div>
+                <div class="supplyItem mgt40">
+                    <div class="fl">
+                        <span class="verMiddle supplyDesc">*企业营业执照：</span>
+                        <img src="img/uploadImg.png" class="supplyIdcard verMiddle">
+                    </div>
+                    <div class="inlineB mgl30">
+                        <a class="uploadBtn mgt35">
+                            上传
+                            <input type="file" name="file" class="iptFile">
+                        </a>
+                        <p class="colb0b fn12 mgt35 lineH26">1、必须看清楚证件号码且证件号码不能被遮挡</p>
+                        <p class="colb0b fn12 lineH26">2、照片必须支持jpg、png格式</p>
+                    </div>
+                </div>
+                <div class="claimdetailFooter mgl280">
+                    <a class="btnReject fl">重置</a>
+                    <a class="btnPass fr" onclick="createDebt()">创建商户</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/plugins/zoomify.js"></script>
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#createStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#createEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+        
+        $(function(){
+            $(".iptFile").change(function() {
+                //判断是否支持FileReader
+                if (window.FileReader) {
+                    var reader = new FileReader();
+                } else {
+                    alert("您的设备不支持图片预览功能！");
+                    return false;
+                }
+                var index = $(".iptFile").index($(this));
+                var $file = $(this);
+                var fileObj = $file[0];
+                var windowURL = window.URL || window.webkitURL;
+                var dataURL;
+                var $img = $(".supplyIdcard").eq(index);
+                var imageType = /^image\//;
+                if (!imageType.test(fileObj.files[0].type)) {       //是否是图片
+                    alert("只能上传图片！");
+                    return false;
+                }
+                if(fileObj.files[0].size>2*1024*1024){      //判断是不是大于规定的大小
+                    alert("上传图片请小于2MB！");
+                    return false;
+                }
+                if(fileObj && fileObj.files && fileObj.files[0]){
+                    dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                    $img.attr('src',dataURL);
+                }else{
+                    dataURL = $file.val();
+                    var imgObj = $(".supplyIdcard").eq(index);
+                    imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+                }
+            });
+        });
+        $('.supplyIdcard').click(function(){                   //图片点击放大
+            $(this).zoomify('zoomIn');
+        });
+    </script>
+</body>
+
+</html>

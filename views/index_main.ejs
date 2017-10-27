@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>概况</title>
+    
+    <link href="css/bootstrap_Grid_system.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="capitalContent">
+            <div class="indexMainTit">
+                资金统计
+            </div>
+            <div class="capitalcontWarp">
+                <div class="capitalcont">
+                    <img src="img/balancePng.png" class="balancePng" />
+                    <div class="inlineB mgl10">
+                        <p class="colf97 mgl10 mgt10">3020.00</p>
+                        <p class="mgl10 mgt10">余额（元）</p>
+                    </div>
+                </div>
+                <div class="capitalcont">
+                    <img src="img/currencyPng.png" class="balancePng" />
+                    <div class="inlineB mgl10">
+                        <p class="colf97 mgl10 mgt10">3020.00</p>
+                        <p class="mgl10 mgt10">余额（币）</p>
+                    </div>
+                </div>
+                <div class="capitalcont">
+                    <img src="img/ensurePng.png" class="balancePng" />
+                    <div class="inlineB mgl10">
+                        <p class="colf97 mgl10 mgt10">3020.00</p>
+                        <p class="mgl10 mgt10">保证金（币）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="capitalContent mgt20">
+            <div class="indexMainTit">
+                订单统计
+            </div>
+            <div class="OrdercontWarp">
+                <div class="OrdercontItem">
+                    <p class="fn20">10</p>
+                    <p class="mgt20">待发货订单</p>
+                </div>
+                <div class="OrdercontItem">
+                    <p class="fn20">5</p>
+                    <p class="mgt20">退换货订单</p>
+                </div>
+                <div class="OrdercontItem">
+                    <p class="fn20">30</p>
+                    <p class="mgt20">昨日订单</p>
+                </div>
+                <div class="OrdercontItem">
+                    <p class="fn20">1569.00</p>
+                    <p class="mgt20">昨日交易额</p>
+                </div>
+                <div class="OrdercontItem">
+                    <p class="fn20">1000</p>
+                    <p class="mgt20">本月订单</p>
+                </div>
+                <div class="OrdercontItem mgr0">
+                    <p class="fn20">4568.00</p>
+                    <p class="mgt20">本月交易额</p>
+                </div>
+            </div>
+        </div>
+        <div class="capitalContent mgt20 pdt20">
+            <div class="indexMainTit inlineB">
+                用户在线（单位/个体）
+            </div>
+            <div class="dateCont">
+                <a class="borderRightd0d onlineChose dateActive" onclick="getOnlinedata(0)">本周</a>
+                <a class="borderRightd0d onlineChose" onclick="getOnlinedata(1)">本月</a>
+                <a class="onlineChose width72" onclick="getOnlinedata(2)">本年</a>
+            </div>
+            <div id="onlineDate" class="onlineDate"></div>
+        </div>
+        <div class="capitalContent pdt20 bgf0f">
+            <div class="authCont pdt20">
+                <div class="indexMainTit inlineB">
+                    认证比例
+                    <span class="fn12 col798">（用户类型）</span>
+                </div>
+                <div class="authChart" id="authChart"></div>
+                <div class="authDescont">
+                    <div class="authDesItem">
+                        <span class="authBgff7 inlineB"></span>
+                        <span>
+                            未认证用户比例
+                        </span>
+                    </div>
+                    <div class="authDesItem">
+                        <span class="authBgccc inlineB"></span>
+                        <span>
+                            实名认证用户比例
+                        </span>
+                    </div>
+                    <div class="authDesItem">
+                        <span class="authBgfe5 inlineB"></span>
+                        <span>
+                            企业认证用户比例
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="debtCont pdt20">
+                <div class="indexMainTit inlineB">
+                    债事报备
+                    <span class="fn12 col798">（债权/债务）</span>
+                </div>
+                <div class="dateCont">
+                    <a class="borderRightd0d debtChose dateActive" onclick="getDebtdata(0)">本周</a>
+                    <a class="borderRightd0d debtChose" onclick="getDebtdata(1)">本月</a>
+                    <a class="debtChose width72" onclick="getDebtdata(2)">本年</a>
+                </div>
+                <div id="DebtDatechart" class="DebtDatechart"></div>
+            </div>
+        </div>
+        <div class="claer"></div>
+        <div class="capitalContent pdt20 bgf0f">
+            <div class="newuserCont pdt20 inlineB">
+                <div class="indexMainTit inlineB">
+                    每月新增用户
+                </div>
+                <div class="newUserchart" id="newUserchart"></div>
+            </div>
+            <div class="regionCont pdt20">
+                <div class="indexMainTit inlineB">
+                    国家与地区
+                </div>
+                <div class="regionBtncont">
+                    <a class="borderRightd0d regionChose dateActive" onclick="getregiondata(0)">地域</a>
+                    <a class="regionChose width72" onclick="getregiondata(1)">城市</a>
+                </div>
+                <div class="authChart mgt20" id="regionchart"></div>
+                <div class="authDescont textCent">
+                    <div class="authDesItem mgt20">
+                        <span class="authBgff7 inlineB"></span>
+                        <span>
+                            北京市
+                        </span>
+                        <span class="mgl10">10%</span>
+                    </div>
+                    <div class="authDesItem mgt20">
+                        <span class="authBgff7 inlineB"></span>
+                        <span>
+                            浙江省
+                        </span>
+                        <span class="mgl10">20%</span>
+                    </div>
+                    <div class="authDesItem mgt20">
+                        <span class="authBgccc inlineB"></span>
+                        <span>
+                            江苏省
+                        </span>
+                        <span class="mgl10">30%</span>
+                    </div>
+                    <div class="authDesItem mgt20">
+                        <span class="authBgfe5 inlineB"></span>
+                        <span>
+                            山东省
+                        </span>
+                        <span class="mgl10">40%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins/echarts.common.min.js"></script>
+    <script>
+        function getOnlinedata(index){                      //用户在线周期按钮点击
+            $('.onlineChose').eq(index).addClass('dateActive').siblings().removeClass('dateActive');
+            if(index==0){
+                getOnlinechart(['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'],[11, 20, 15, 38, 20, 40, 10,50,32,5])
+            }else if(index==1){
+                getOnlinechart(['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'],[112, 20, 1, 38, 20, 40, 10,50,32,5])
+            }else{
+                getOnlinechart(['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'],[110, 200, 150, 30, 20, 55, 44,50,32,5])
+            }
+        }
+        getOnlinedata(0);           //默认获取本周在线人数
+        function getOnlinechart(newDate,resData){           //newDate周期，resData在线人数
+            var onlineDate = echarts.init(document.getElementById("onlineDate"));
+            var option_onlineDate = {
+                tooltip : {
+                    trigger: 'axis'
+                },
+                toolbox: {
+                    show : true
+                }, 
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        axisLine: {show: false},
+                        axisTick: {show: false},
+                        data : newDate 
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        axisLabel : {
+                            formatter: '{value}',
+                        },
+                        axisLine: {show: false},
+                        splitLine: {show: true},
+                        axisTick: {show: false}
+                    }
+                ],
+                series : [
+                    {
+                        name:'在线人数',
+                        type:'line',
+                        itemStyle : {  
+                            normal : {  
+                                color:'#169cd2',  
+                                lineStyle:{  
+                                    color:'#169cd2'  
+                                },
+                                label : {show: true,fontSize:14}
+                            }  
+                        },  
+                        areaStyle:{ 
+                            normal:{
+                                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                    offset: 0, color: '#b1e3fe' 
+                                }, {
+                                    offset: 1, color: '#fff' 
+                                }], false)
+                            }
+                        },
+                        data: resData 
+                    }
+                ]
+            };
+            onlineDate.setOption(option_onlineDate);
+        }
+
+        function getDebtdata(index){                      //债权债务周期按钮点击
+            $('.debtChose').eq(index).addClass('dateActive').siblings().removeClass('dateActive');
+            if(index==0){
+                getDebtChart(['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'],[11, 20, 15, 38, 20, 40, 10,50,32,5],[110, 200, 150, 30, 20, 22, 44,50,3,55])
+            }else if(index==1){
+                getDebtChart(['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'],[1, 20, 15, 3, 20, 40, 10,5,32,5],[10, 200, 15, 30, 20, 22, 4,50,3,55])
+            }else{
+                getDebtChart(['06:00','07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00'],[11, 20, 15, 8, 20, 4, 10,50,32,5],[10, 20, 10, 30, 0, 22, 44,0,3,55])
+            }
+        }
+        function getDebtChart(newDate,crediData,debtData){                      //newDate周期，crediData债权，debtData债务
+            var DebtDatechart = echarts.init(document.getElementById("DebtDatechart"));
+            var option_onlineDate = {
+                tooltip : {
+                    trigger: 'axis'
+                },
+                toolbox: {
+                    show : true
+                }, 
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        axisLine: {show: false},
+                        axisTick: {show: false},
+                        
+                        data : newDate 
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value',
+                        axisLabel : {
+                            formatter: '{value}',
+                        },
+                        axisLine: {show: false},
+                        splitLine: {show: true},
+                        axisTick: {show: false}
+                    }
+                ],
+                series : [
+                    {
+                        name:'债权',
+                        type:'line',
+                        itemStyle : {  
+                            normal : {  
+                                color:'#5cd1d4',  
+                                lineStyle:{  
+                                    color:'#5cd1d4'  
+                                },
+                                
+                            }  
+                        },  
+                        data: crediData 
+                    },
+                    {
+                        name:'债务',
+                        type:'line',
+                        itemStyle : {  
+                            normal : {  
+                                color:'#f4852b',  
+                                lineStyle:{  
+                                    color:'#f4852b'  
+                                },
+                            }  
+                        },  
+                        data: debtData 
+                    }
+                ]
+            };
+            DebtDatechart.setOption(option_onlineDate);
+        }
+        getDebtdata(0);            //默认获取本周债事报备
+
+        //认证比例圆环图表
+        var authChart = echarts.init(document.getElementById("authChart"));
+        var option_authChart = {
+            tooltip: {
+
+                formatter: "{b} : {c} ({d}%)"
+            },
+            calculable: true,
+            series: [
+                {
+                    type:'pie',
+                    radius: ['75%', '90%'],
+                    avoidLabelOverlap: false,
+                    color:['#ff784f','#cccccc','#fe5083'],
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        }
+                    },
+                    data:[{ value: 17000, name: '未认证用户比例' },{ value: 41157, name: '实名认证用户比例' },{ value: 41157, name: '企业认证用户比例' }]
+                }
+            ]
+        };
+        authChart.setOption(option_authChart);
+
+        //每月新增用户图表
+        var newUserchart = echarts.init(document.getElementById("newUserchart"));
+        option_newUserchart = {
+            color: ['#3398DB'],
+            tooltip : {
+                trigger: 'axis',
+                axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                    type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+                }
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            xAxis : [
+                {
+                    type : 'category',
+                    axisLine: {show: false},
+                    axisTick: {show: false},
+                    data : ['1月', '2月', '3月', '4月', '5月', '6月', '7月','8月','9月','10月','11月','12月'],
+                    axisTick: {
+                        alignWithLabel: true
+                    }
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value',
+                    axisLine: {show: false},
+                    axisTick: {show: false}
+                }
+            ],
+            series : [
+                {
+                    name:'新增用户',
+                    type:'bar',
+                    barWidth: '25%',
+                    itemStyle:{  
+                        normal:{  
+                            color:'#0999d3',  
+                        }  
+                    },  
+                    data:[10, 52, 20, 34, 39, 30, 20,22,55,66,33,77]
+                }
+            ]
+        };
+        newUserchart.setOption(option_newUserchart);
+
+
+
+        function getregiondata(index){
+            $('.regionChose').eq(index).addClass('dateActive').siblings().removeClass('dateActive');
+        }
+        //区域圆环图表
+        var regionchart = echarts.init(document.getElementById("regionchart"));
+        var option_regionchart = {
+            tooltip: {
+
+                formatter: "{b} : {c} ({d}%)"
+            },
+            calculable: true,
+            series: [
+                {
+                    type:'pie',
+                    radius: ['75%', '90%'],
+                    avoidLabelOverlap: false,
+                    color:['#da7800','#fff85e','#fe9960','#ff6562'],
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        }
+                    },
+                    data:[{ value: 100, name: '北京市' },{ value: 200, name: '浙江省' },{ value: 300, name: '江苏省' },{ value: 400, name: '山东省' }]
+                }
+            ]
+        };
+        regionchart.setOption(option_regionchart);
+    </script>
+</body>
+
+</html>

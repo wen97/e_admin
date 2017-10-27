@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>商家列表</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    商家列表
+                </div>
+            </div>
+            <div class="debtManagementNav">
+                <div class="debtManagementExport inlineB" onclick ="$('#reportTable').tableExport({ type: 'excel', escape: 'false'})">
+                    导出
+                </div>
+                <select class="debtManagementSelect width108">
+                    <option value="">所属债行</option>
+                    <option value="">总级行</option>
+                    <option value="">省级行</option>
+                </select>
+                <select class="debtManagementSelect width108">
+                    <option value="">店铺类型</option>
+                    <option value="">个人</option>
+                    <option value="">企业</option>
+                </select>
+                <input placeholder="开始日期（年/月/日/时）" class="managementDate width162" id="managementStart" />
+                    <span class="mgl10">至</span>
+                <input placeholder="结束日期（年/月/日/时）" class="managementDate width162" id="managementEnd" />
+                <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate width162" /> 
+                <div class="debtManagementSearch inlineB width92 fr">
+                    查询
+                </div>
+            </div>
+            <div class="ManagementTableWarp">
+                <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable">
+                </table>
+            </div>
+        </div>
+        <div class="delCont">
+            <div class="delContHead">
+                <span class="mgl20">暂停店铺</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose()"/>
+            </div>
+            <p class="delNotice">您确定要暂停该店铺</p>
+            <div class="delBtnwarp">
+                <a class="delCancel" onclick="accountContClose()">取消</a>
+                <a class="delSure">确定</a>
+            </div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/plugins/tableExport.js"></script>
+    <script src="js/plugins/jquery.base64.js"></script>
+
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+
+    //手动制造30条数据
+	var datas  = [];
+	for(var i=0;i<300;i++){
+		datas[i]={"a":"总级行"+i,"b":"个人","c":"融合天下资产管理有限公司","d":"0571-8888888","e":"张小丫","f":"电话","g":"33032619930856845158","h":"2017/10/10 15:00","id":i}
+	}
+
+
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:640,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"a",title:"店铺名称",align:"center",valign:"middle"},
+				{field:"b",title:"店铺类型",align:"center",valign:"middle"},
+                {field:"c",title:"所属债行",align:"center",valign:"middle"},
+                {field:"d",title:"平台账户",align:"center",valign:"middle"},
+                {field:"e",title:"负责人",align:"center",valign:"middle"},
+                {field:"f",title:"手机号",align:"center",valign:"middle"},
+                {field:"g",title:"身份证",align:"center",valign:"middle"},
+                {field:"h",title:"创建时间",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '状态',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        if(value%2!=0){
+                            var a = '<span class="colff8" >正常</span>';
+                            return a;
+                        }else{
+                            var a = '<span class="cole70" >暂停</span>';
+                            return a;
+                        }
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var e = '<a onclick="suspend(\''+ value + '\')">暂停</a> '; 
+                        if(value%2!=0){
+                            var d = '<a class="mgl10" onclick=openLocation("supply_companyDetail","' + value + '")>详细</a> ';
+                        }else{
+                            var d = '<a class="mgl10" onclick=openLocation("supply_personalDetail","' + value + '")>详细</a> ';
+                        } 
+                        return e+d;
+                    }
+                }
+			],
+			data:datas,
+		});										
+        //暂停按钮点击弹窗
+        function suspend(index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $('.delCont');
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() - $(".delCont").height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg,.delCont").delay("100").fadeIn();
+        }
+
+        function accountContClose(){                                      
+            $(".accountContBg,.delCont").delay("100").fadeOut();
+        }
+    </script>
+</body>
+
+</html>

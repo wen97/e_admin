@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>待发货订单</title>
+
+    
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    待发货订单
+                </div>
+            </div>
+            <div class="debtManagementNav">
+                <span>买家昵称：</span>
+                <input type="text" placeholder="请输入买家昵称" class="managementDate width138 mgl0">
+                <span class="mgl10">订单号：</span>
+                <input type="text" placeholder="请输入订单号" class="managementDate width138 mgl0">  
+                <span class="mgl10">成交时间：</span>
+                <input placeholder="开始日期（年/月/日/时）" class="managementDate width162 mgl0" id="managementStart">
+                    <span class="mgl10">——</span>
+                <input placeholder="结束日期（年/月/日/时）" class="managementDate width162 mgl10" id="managementEnd">
+                <div class="deliverSearch fr">
+                    查询
+                </div>
+            </div>
+            <ul class="tradingNav mgt40">
+                <li class="tradingClick" data-type="0"><span>等待发货的订单</span></li>
+                <li data-type="1"><span>已发货的订单</span></li>
+            </ul>
+            <div class="tradingHead">
+                <a class="tradingNextpage fr">下一页</a>
+                <a class="tradingLastpage fr mgr20">上一页</a>
+            </div>
+            <div class="tradingMainWarp">
+                <ul class="tradingMainhead">
+                    <li>商品</li>
+                    <li>单价</li>
+                    <li>数量</li>
+                    <li>售后</li>
+                    <li>买家</li>
+                    <li>交易状态</li>
+                    <li>实收款</li>
+                    <li>评价</li>
+                </ul>
+                <div class="tradingCont">
+                    <div class="tradingConthead">
+                        <span class="mgl20">订单号:51245122211000</span>
+                        <span class="mgl20">成交时间:2017-05-22 10:00:00</span>
+                    </div>
+                    <ul class="tradingContmain">
+                        <li>
+                            <img src="./img/balancePng.png" class="tradingContImg" >
+                            <p class="tradinggoodstitle">商品标题：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊aaaaaaaaaaaaaaaaa</p>
+                        </li>
+                        <li>
+                            <span>￥40.00+币100.00</span>
+                        </li>
+                        <li>1</li>
+                        <li class="colfdc"></li>
+                        <li>xwn788</li>
+                        <li>
+                            <p class="colff0">待付款</p>
+                            <a class="tradingDetailbtn" onclick="showDeliver('orderDetails')">详情</a>
+                            <a class="tradingDeliverbtn" onclick="showDeliver('deliverCont')">发货</a>
+                        </li>
+                        <li>
+                            <p>￥40.00</p>
+                            <p>币100.00</p>
+                            <p>(含快递:￥0.00)</p>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="tradingCont">
+                    <div class="tradingConthead">
+                        <span class="mgl20">订单号:51245122211000</span>
+                        <span class="mgl20">成交时间:2017-05-22 10:00:00</span>
+                    </div>
+                    <ul class="tradingContmain">
+                        <li>
+                            <img src="./img/balancePng.png" class="tradingContImg">
+                            <p class="tradinggoodstitle">商品标题：啊啊啊啊啊啊啊啊</p>
+                        </li>
+                        <li>
+                            <span>￥40.00+币100.00</span>
+                        </li>
+                        <li>1</li>
+                        <li class="colfdc"></li>
+                        <li>xwn788</li>
+                        <li>
+                            <p class="colff0">待付款</p>
+                            <a class="tradingDetailbtn">详情</a>
+                            <a class="tradingDeliverbtn">发货</a>
+                        </li>
+                        <li>
+                            <p>￥40.00</p>
+                            <p>币100.00</p>
+                            <p>(含快递:￥0.00)</p>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="tradingCont">
+                    <div class="tradingConthead">
+                        <span class="mgl20">订单号:51245122211000</span>
+                        <span class="mgl20">成交时间:2017-05-22 10:00:00</span>
+                    </div>
+                    <ul class="tradingContmain">
+                        <li>
+                            <img src="./img/balancePng.png" class="tradingContImg">
+                            <p class="tradinggoodstitle">商品标题：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+                        </li>
+                        <li>
+                            <span>￥40.00+币100.00</span>
+                        </li>
+                        <li>1</li>
+                        <li class="colfdc"></li>
+                        <li>xwn788</li>
+                        <li>
+                            <p class="colff0">待付款</p>
+                            <a class="tradingDetailbtn">详情</a>
+                            <a class="tradingDeliverbtn">发货</a>
+                        </li>
+                        <li>
+                            <p>￥40.00</p>
+                            <p>币100.00</p>
+                            <p>(含快递:￥0.00)</p>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="tradingCont">
+                    <div class="tradingConthead">
+                        <span class="mgl20">订单号:51245122211000</span>
+                        <span class="mgl20">成交时间:2017-05-22 10:00:00</span>
+                    </div>
+                    <ul class="tradingContmain">
+                        <li>
+                            <img src="./img/balancePng.png" class="tradingContImg">
+                            <p class="tradinggoodstitle">商品标题：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+                        </li>
+                        <li>
+                            <span>￥40.00+币100.00</span>
+                        </li>
+                        <li>1</li>
+                        <li class="colfdc"></li>
+                        <li>xwn788</li>
+                        <li>
+                            <p class="colff0">待付款</p>
+                            <a class="tradingDetailbtn">详情</a>
+                            <a class="tradingDeliverbtn">发货</a>
+                        </li>
+                        <li>
+                            <p>￥40.00</p>
+                            <p>币100.00</p>
+                            <p>(含快递:￥0.00)</p>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="tradingCont">
+                    <div class="tradingConthead">
+                        <span class="mgl20">订单号:51245122211000</span>
+                        <span class="mgl20">成交时间:2017-05-22 10:00:00</span>
+                    </div>
+                    <ul class="tradingContmain">
+                        <li>
+                            <img src="./img/balancePng.png" class="tradingContImg">
+                            <p class="tradinggoodstitle">商品标题：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+                        </li>
+                        <li>
+                            <span>￥40.00+币100.00</span>
+                        </li>
+                        <li>1</li>
+                        <li class="colfdc"></li>
+                        <li>xwn788</li>
+                        <li>
+                            <p class="colff0">待付款</p>
+                            <a class="tradingDetailbtn">详情</a>
+                            <a class="tradingDeliverbtn">发货</a>
+                        </li>
+                        <li>
+                            <p>￥40.00</p>
+                            <p>币100.00</p>
+                            <p>(含快递:￥0.00)</p>
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
+                <!-- <div class="textCent mgt50"><img src="./img/noRecord.png" class="noRecordpng"/><p class="col666 mgb152">您还没有任何订单信息~</p></div> -->
+            </div>
+            <div class="tradingHead">
+                <span>每页20条，共23条</span>
+                <span class="fr">当前第1/2页</span>
+            </div>
+        </div>
+        <div class="deliverCont">
+            <div class="delContHead">
+                <span class="mgl20">选择快递</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('deliverCont','accountContBg')"/>
+            </div>
+            <div class="deliverMain">
+                <img src="./img/expressImg.png" class="verMiddle">
+                <select class="debtManagementSelect width280 mgl20 borderNone">
+                    <option value="">请选择快递公司</option>
+                    <option value="0">申通</option>
+                    <option value="1">圆通</option>
+                    <option value="2">韵达</option>
+                </select>
+            </div>
+            <div class="deliverMain mgt25">
+                <img src="./img/printerImg.png" class="verMiddle">
+                <input type="text" placeholder="请填写快递单号" class="createDebtIpt width280 borderNone">
+            </div>
+            <div class="deliverFooter">
+                <a class="btnDeliver">立即发货</a>
+            </div>
+        </div>
+        <div class="orderDetails">
+            <div class="delContHead">
+                <span class="mgl20">订单详情</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('orderDetails','accountContBg')"/>
+            </div>
+            <div class="orderDetailsNotice">
+                <span class="mgl20">当前订单状态：未付款</span>
+            </div>
+            <ul class="orderDetailsTab">
+                <li class="tabClick">订单信息</li>
+                <li>收货地址</li>
+                <li>发票信息</li>
+            </ul>
+            <div>
+                <div class="orderDetailsMain">
+                    <p>买家信息</p>
+                    <p class="mgt15">
+                        <span class="orderDetailsitem">昵称：xwm888</span>
+                        <span class="orderDetailsitem">真实姓名：陈**</span>
+                    </p>
+                    <p class="mgt15">
+                        <span class="orderDetailsitem">所在地区：江苏省 常州市</span>
+                        <span class="orderDetailsitem">联系电话：+086*******</span>
+                    </p>
+                    <table class="orderDetailstable">
+                        <thead>
+                            <td>商品</td>
+                            <td>状态</td>
+                            <td>单价</td>
+                            <td>数量</td>
+                            <td>商品总价</td>
+                        </thead>
+                        <tr>
+                            <td>
+                                <img src="./img/balancePng.png" class="orderDetailsImg">
+                                <p class="orderDetailsgoods">商品标题：啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</p>
+                            </td>
+                            <td class="colff0">未付款</td>
+                            <td>￥40.00+币100.00</td>
+                            <td>1</td>
+                            <td>￥140.00</td>
+                        </tr>
+                    </table>
+                    <div class="orderDetailsreal">
+                        <span class="fr mgr20">实收：<span class="colff0">￥140.00</span></span>
+                    </div>
+                    <p class="mgt10">
+                        <span>订单号：45102244455521111</span>
+                    </p>
+                    <p class="mgt10">
+                        <span>交易号：55215514216665545</span>
+                    </p>
+                    <p class="mgt10">
+                        <span>创建时间：2017/12/14 12:00</span>
+                    </p>
+                </div>
+                <div class="orderDetailsMain dispNone">
+                    <p>物流信息</p>
+                    <p class="mgt15">
+                        <span>阿亮，182101698512，北京市海町区上地东路颐和1号楼</span>
+                        <a class="orderDetailsaddres fr" onclick="showDeliver('receiptCont')">修改</a>
+                    </p>
+                    <p class="mgt15">
+                        <span>运输方式：快递</span>
+                    </p>
+                </div>
+                <div class="orderDetailsMain dispNone">
+                    <p>发票信息</p>
+                    <p class="mgt15">
+                        <span>发票类型：个人</span>
+                        <a class="orderDetailsaddres fr" onclick="showDeliver('invoiceCont')">修改</a>
+                    </p>
+                    <p class="mgt15">
+                        <span>发票抬头：啊啊啊</span>
+                    </p>
+                    <p class="mgt15">
+                        <span>买家留言：啊啊啊啊啊啊</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="receiptCont">
+            <div class="receiptContHead">
+                <span class="mgl20">修改收货人信息</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('receiptCont')"/>
+            </div>
+            <p class="mgt15">
+                <span class="supplyDesc">*收货人姓名：</span>
+                <input type="text" placeholder="请输入收货人姓名" class="createDebtIpt width210">
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">*手机号码：</span>
+                <input type="text" placeholder="请输入手机号码" class="createDebtIpt width210">
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">*所在地域：</span>
+                <select id="localProvince" class="createDebtIpt width124"></select>  
+                <select id="localCity" class="createDebtIpt width124 mgl10"></select>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">*详细地址：</span>
+                <textarea class="createDebtIpt width262 goodsTextarea"></textarea>
+            </p>
+            <div class="deliverFooter mgt40">
+                <a class="receiptSure fr mgt15 mgr20">确定</a>
+                <a class="receiptCancel fr mgt15 mgr15"  onclick="accountContClose('receiptCont')">取消</a>
+            </div>
+        </div>
+        <div class="invoiceCont">
+            <div class="receiptContHead">
+                <span class="mgl20">修改发票信息</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('invoiceCont')"/>
+            </div>
+            <p class="mgt30">
+                <span class="supplyDesc">*发票类型：</span>
+                <select class="debtManagementSelect width210 mgl20">
+                    <option value="">请选择发票类型</option>
+                    <option value="0">个人</option>
+                    <option value="1">公司</option>
+                </select>
+            </p>
+            <p class="mgt15">
+                <span class="supplyDesc">*发票抬头：</span>
+                <input type="text" placeholder="请输入发票抬头" class="createDebtIpt width210">
+            </p>
+            <div class="deliverFooter mgt20">
+                <a class="invoiceSure fr mgt15 mgr20">确定</a>
+                <a class="receiptCancel fr mgt15 mgr15"  onclick="accountContClose('invoiceCont')">取消</a>
+            </div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/plugins/tableExport.js"></script>
+    <script src="js/plugins/jquery.base64.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);									
+        //发货按钮点击弹窗
+        function showDeliver(dom,index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $("."+dom);
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() -$box.height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg").delay("100").fadeIn();
+            $("."+dom).delay("100").fadeIn();
+        };
+
+        function accountContClose(dom,contbg){ 
+            if(contbg!=null){
+                $("."+contbg).delay("100").fadeOut();
+            }                                    
+            $("."+dom).delay("100").fadeOut();
+        };
+        //订单详情tab点击
+        $(".orderDetailsTab li").click(function(){
+            var index=$(".orderDetailsTab li").index($(this));
+            $(this).addClass("tabClick").siblings().removeClass("tabClick");
+            $(".orderDetailsMain").eq(index).removeClass("dispNone").siblings().addClass("dispNone");
+            console.log(index)
+        })
+
+        $(function(){
+            //订单状态点击
+            $(".tradingNav li").click(function(){
+                $(this).addClass("tradingClick").siblings().removeClass("tradingClick");
+                console.log($(this).data("type"));
+            })
+        })
+    </script>
+</body>
+
+</html>

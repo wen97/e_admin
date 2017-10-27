@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>债行管理</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    债行管理
+                </div>
+            </div>
+            <div class="debtManagementNav">
+                <div class="debtManagementExport inlineB" onclick ="$('#reportTable').tableExport({ type: 'excel', escape: 'false'})">
+                    导出
+                </div>
+                <select class="debtManagementSelect width160">
+                    <option value="">请选择级别</option>
+                    <option value="">总级行</option>
+                    <option value="">省级行</option>
+                </select>
+                <input placeholder="开始日期（年/月/日/时）" class="managementDate" id="managementStart" />
+                    <span class="mgl10">至</span>
+                <input placeholder="结束日期（年/月/日/时）" class="managementDate" id="managementEnd" />
+                <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate" /> 
+                <div class="debtManagementSearch inlineB width92 fr">
+                    查询
+                </div>
+            </div>
+            <div class="ManagementTableWarp">
+                <div class="deleteCont fn14">
+                    <input type="checkbox" onclick="selectAll()" name="selectAll" class="margin0 verMiddle">
+                    <span class="mgl2 verMiddle">全选</span>
+                    <span class="mgl10 deleteBtn verMiddle" onclick="delateChoose()">删除</span>
+                </div>
+                <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable">
+                </table>
+            </div>
+        </div>
+        <div class="delCont">
+            <div class="delContHead">
+                <span class="mgl20">删除数据</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('delCont','accountContBg')"/>
+            </div>
+            <p class="delNotice">您确定要删除此数据</p>
+            <div class="delBtnwarp">
+                <a class="delCancel" onclick="accountContClose('delselectCont','accountContBg')">取消</a>
+                <a class="delSure" data-id="" onclick="delSure()">确定</a>
+            </div>
+        </div>
+        <div class="delselectCont">
+            <div class="delContHead">
+                <span class="mgl20">删除所选数据</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('delselectCont','accountContBg')"/>
+            </div>
+            <p class="delNotice">您确定要删除选中的所有数据</p>
+            <div class="delBtnwarp">
+                <a class="delCancel" onclick="accountContClose('delselectCont','accountContBg')">取消</a>
+                <a class="selectDelate"  onclick="selectDelate()">确定</a>
+            </div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/plugins/tableExport.js"></script>
+    <script src="js/plugins/jquery.base64.js"></script>
+    <script src="js/common.js"></script>
+
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+
+    //手动制造30条数据
+	var datas  = [];
+	for(var i=0;i<300;i++){
+		datas[i]={"a":"总级行"+i,"b":"中国总行","c":"融合天下资产管理有限公司","d":"0571-8888888","e":"张小丫","f":"电话","g":"2017/07/28","id":i}
+	}
+
+
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:580,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"checked",checkbox:true},
+				{field:"a",title:"债行级别",align:"center",valign:"middle"},
+				{field:"b",title:"所属债行",align:"center",valign:"middle"},
+                {field:"c",title:"单位名称",align:"center",valign:"middle"},
+                {field:"d",title:"单位座机",align:"center",valign:"middle"},
+                {field:"e",title:"联系人",align:"center",valign:"middle"},
+                {field:"f",title:"电话",align:"center",valign:"middle"},
+                {field:"g",title:"创建时间",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '状态',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a onclick=delateData(' + value + ')>关闭</a>';
+                        return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var e = '<a onclick="edit(\''+ value + '\')">编辑</a> ';  
+                        var d = '<a class="mgl10">详细</a> ';
+                        return e+d;
+                    }
+                }
+			],
+			data:datas,
+		});										
+        
+        //获取表格中选中的行
+        function getIdSelections() {
+            return $.map($('#reportTable').bootstrapTable('getSelections'), function (row) {
+                return row.id
+            });
+        }
+        function delateChoose(){
+            var ids = getIdSelections();
+            if(ids.length==0){
+                alert("请选择债行");
+                return false;
+            }
+            showBox("delselectCont","accountContBg")
+        }
+        function selectDelate(){
+            var ids = getIdSelections();
+            console.log(ids)
+            $('#reportTable').bootstrapTable('remove', {
+                field: 'id',
+                values: ids
+            });
+            accountContClose('delselectCont','accountContBg');
+            $('input[name="selectAll"]').prop("checked", false);
+        }
+        //删除按钮点击
+        function delateData(index){
+            $(".delSure").data("id",index);
+            showBox('delCont','delCont');
+        }
+        //删除数据确定按钮
+        function delSure(){
+            console.log(1)
+            var newarry = [];
+            var id = $(".delSure").data("id");
+            newarry.push(parseInt(id))
+            $('#reportTable').bootstrapTable('remove', {
+                field: 'id',
+                values: newarry
+            });
+            accountContClose('delCont','accountContBg');
+        }
+    </script>
+</body>
+
+</html>

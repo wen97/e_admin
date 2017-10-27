@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>创建债行</title>
+
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/zoomify.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    创建债行
+                </div>
+            </div>
+            <div class="claimdetailMain">
+                <div class="claimdetailMainHead">
+                    所属级别<span class="cole70">（必选）</span>
+                </div>
+                <div class="createDebtDes">
+                    <div class="createDebtItem">
+                        <span>债行级别</span>
+                        <select class="createDebtIpt width716">
+                            <option value="">请选择债行级别</option>
+                            <option value="总省行">总省行</option>
+                        </select>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>所属债行</span>
+                        <select class="createDebtIpt width220">
+                            <option value="">请选择所属上级债行</option>
+                            <option value="烟台债行">烟台债行</option>
+                        </select>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>债行简称</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请输入债行简称"/>
+                        <p class="colb0b fn12 mgt10 mgll85">10-100个字，请简述，但请勿添加联系方式</p>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>所在地区</span>
+                        <select id="localProvince" class="createDebtIpt width152"></select>  
+                        <select id="localCity" class="createDebtIpt width152 mgl10"></select>
+                        <input type="text" class="createDebtIpt width385 mgl10" placeholder="请输入详细地址"/>
+                    </div>
+                    <div class="createDebtItem mgt25">
+                        <div class="fl">
+                            <span class="verMiddle">债行Logo</span>
+                            <img src="img/uploadImg.png" class="uploadImg verMiddle">
+                        </div>
+                        <div class="inlineB mgl15">
+                            <a class="uploadBtn mgt10">
+                                上传
+                                <input type="file" name="file" class="iptFile" />
+                            </a>
+                            <p class="colb0b fn12 mgt35">要求清晰健康代表品牌形象的正方形图片，请勿使用二维码，最大2M，300*300像素</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="claimdetailMainHead">
+                    企业信息<span class="cole70">（必填）</span>
+                </div>
+                <div class="createDebtDes">
+                    <div class="createDebtItem">
+                        <span>单位名称</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请填写营业执照单位名称"/>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>单位法人</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请填写营业资质法人代表"/>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>单位座机</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请输入单位座机/手机号"/>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>注册地址</span>
+                        <select id="regisProvince" class="createDebtIpt width152"></select>  
+                        <select id="regisCity" class="createDebtIpt width152 mgl10"></select>
+                        <input type="text" class="createDebtIpt width385 mgl10" placeholder="请输入详细地址"/>
+                    </div>
+                    <div class="createDebtItem mgt25">
+                        <div class="fl">
+                                <span class="verMiddle">营业执照</span>
+                                <img src="img/uploadImg.png" class="uploadImg verMiddle">
+                        </div>
+                        <div class="inlineB mgl15">
+                            <a class="uploadBtn mgt10">
+                                上传
+                                <input type="file" name="file" class="iptFile" />
+                            </a>
+                            <p class="colb0b fn12 mgt35">请上传营业执照扫描件，确保信息清晰可见，最大不超过2M</p>
+                        </div>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>开户银行</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请填写对公账号开户所在银行"/>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>开户支行</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请填写开户所在支行"/>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>银行卡号</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请填写对公银行账号"/>
+                    </div>
+                </div>
+                <div class="claimdetailMainHead">
+                    负责人<span class="cole70">（必填）</span>
+                </div>
+                <div class="createDebtDes">
+                    <div class="createDebtItem">
+                        <span>联系人</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请输入联系人"/>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>身份证号</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请输入身份证号"/>
+                    </div>
+                    <div class="createDebtItem">
+                        <span>联系电话</span>
+                        <input type="text" class="createDebtIpt width716" placeholder="请输入单位座机/手机号"/>
+                    </div>
+                    <div class="createDebtItem mgt25">
+                        <div class="fl">
+                                <span class="verMiddle width90">身份证扫描件</span>
+                                <img src="img/uploadImg.png" class="uploadImg verMiddle">
+                        </div>
+                        <div class="inlineB mgl15">
+                            <a class="uploadBtn mgt10">
+                                上传
+                                <input type="file" name="file" class="iptFile" />
+                            </a>
+                            <p class="colb0b fn12 mgt35">请上传身份证扫描件，确保信息清晰可见，最大不超过2M</p>
+                        </div>
+                    </div>
+                    <div class="createDebtItem mgt25">
+                        <div class="fl">
+                                <span class="verMiddle width90">授权书扫描件</span>
+                                <img src="img/uploadImg.png" class="uploadImg verMiddle">
+                        </div>
+                        <div class="inlineB mgl15">
+                            <a class="uploadBtn mgt10">
+                                上传
+                                <input type="file" name="file" class="iptFile" />
+                            </a>
+                            <p class="colb0b fn12 mgt35">请上传授权书扫描件，确保信息清晰可见，最大不超过2M</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="claimdetailFooter mgb40">
+                <a class="btnReject fl">重置</a>
+                <a class="btnPass fr" onclick="createDebt()">创建</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins/zoomify.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        var imgUrl=[];
+        $(function(){
+            $(".iptFile").change(function() {
+                //判断是否支持FileReader
+                if (window.FileReader) {
+                    var reader = new FileReader();
+                } else {
+                    alert("您的设备不支持图片预览功能！");
+                    return false;
+                }
+                var index = $(".iptFile").index($(this));
+                var $file = $(this);
+                var fileObj = $file[0];
+                var windowURL = window.URL || window.webkitURL;
+                var dataURL;
+                var $img = $(".uploadImg").eq(index);
+                var imageType = /^image\//;
+                if (!imageType.test(fileObj.files[0].type)) {       //是否是图片
+                    alert("只能上传图片！");
+                    return false;
+                }
+                if(fileObj.files[0].size>2*1024*1024){      //判断是不是大于规定的大小
+                    alert("上传图片请小于2MB！");
+                    return false;
+                }
+                if(fileObj && fileObj.files && fileObj.files[0]){
+                    dataURL = windowURL.createObjectURL(fileObj.files[0]);
+                    imgUrl[index]=dataURL;
+                    $img.attr('src',dataURL);
+                }else{
+                    dataURL = $file.val();
+                    imgUrl[index]=dataURL;
+                    var imgObj = $(".uploadImg").eq(index);
+                    imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale)";
+                    imgObj.filters.item("DXImageTransform.Microsoft.AlphaImageLoader").src = dataURL;
+                }
+                reader.onload = function(evt){
+                    imgUrl[index] = evt.srcElement ? evt.srcElement.result:evt.target.result;
+                }
+                reader.readAsDataURL(fileObj.files[0]);
+            });
+        });
+        $('.uploadImg').click(function(){                   //图片点击放大
+            $(this).zoomify('zoomIn');
+        });
+        function createDebt(){
+            alert(imgUrl)
+        }
+    </script>
+</body>
+
+</html>

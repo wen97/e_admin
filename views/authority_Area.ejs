@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>权限-地区</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap-switch.min.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    地区
+                </div>
+            </div>
+            <div class="noticepushMain">
+               <div class="noticepushNav">
+                    <div class="pushNavhead">
+                        <span class="searchImg"></span>
+                        <span>筛选查询</span>
+                        <span class="pushNavSearch fr">查询结果</span>
+                    </div>
+                    <div class="mgt15">
+                        <span class="mgl20">日期：</span>
+                        <input placeholder="开始日期（年/月/日/时）" class="managementDate " id="managementStart" />
+                        <span class="mgl5">——</span>
+                        <input placeholder="结束日期（年/月/日/时）" class="managementDate" id="managementEnd" />
+                        <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate">
+                        <div class="debtManagementExport inlineB mgl20" onclick="$('#reportTable').tableExport({ type: 'excel', escape: 'false'})">
+                            导出
+                        </div>
+                    </div>
+               </div>
+               <div class="noticepushTableWarp">
+                    <div class="pushTablehead">
+                        <span class="catalogImg"></span>
+                        <span>数据列表</span>
+                        <div class="dropdown fr cola4a">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                排序方式
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <li><a href="#">按最近</a></li>
+                                <li><a href="#">按最早</a></li>
+                            </ul>
+                        </div>
+                        <div class="noticepushBtn fr cola4a" onclick="showBox('adddebtCont')">
+                            添加
+                        </div>
+                    </div>
+                    <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable"></table>
+                </div>
+            </div>
+        </div>
+        <div class="adddebtCont">
+            <div class="delContHead">
+                <span class="mgl20">关联债行</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('adddebtCont','accountContBg')"/>
+            </div>
+            <div class="mgt30 mgl50 adddebtMain">
+                <span>债行简称：</span>
+                <input type="text" placeholder="请输入债行名称" class="managementDate width268 mgl0">
+                <span class="addSearch">
+                    <i class="searchImg"></i>
+                </span>
+                <img src="img/btnTrue.png" class="adddebtImg">
+                <!-- <p class="mgt10 colff0 mgl68">
+                    注：未找到匹配债行
+                    <img src="img/btnFalse.png" class="adddebtImg">
+                </p> -->
+            </div>
+            <div class="adddebtFoot">
+                <div class="adddebtSubmit">
+                    保存
+                </div>
+            </div>
+        </div>
+        <div class="delCont">
+            <div class="delContHead">
+                <span class="mgl20">删除公告</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose('delCont','accountContBg')"/>
+            </div>
+            <p class="delNotice">您确定要删除此公告信息吗？</p>
+            <div class="delBtnwarp">
+                <a class="delCancel" onclick="accountContClose()">取消</a>
+                <a class="delSure">确定</a>
+            </div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/bootstrap-switch.min.js"></script>
+    <script src="js/plugins/tableExport.js"></script>
+    <script src="js/plugins/jquery.base64.js"></script>
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+
+    //手动制造30条数据
+	var datas  = [];
+	for(var i=0;i<300;i++){
+		datas[i]={"a":"E42541"+i,"b":"关于债权债务纠纷处理办法名录","c":"2017-08-02 15:12:12","d":"admin","id":i}
+	}
+
+
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 12,
+            height:640,
+			pageNumber:1,
+			pageList: [12],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"a",title:"债行",align:"center",valign:"middle"},
+				{field:"b",title:"地区",align:"center",valign:"middle"},
+                {field:"c",title:"负责人",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '是否启用',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<div class="switch switch-small myswitch"><input type="checkbox" checked name="status" data-id="'+value+'"/></div>';
+                        return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var e = '<a class="col6cc" onclick=showBox("adddebtCont","' + value + '")>编辑</a> ';  
+                        var d = '<a class="col6cc mgl10" onclick=showBox("delCont","' + value + '")>删除</a> ';
+                        return e+d;
+                    }
+                }
+            ],
+            data:datas,
+            onPageChange: function (number, size) {
+                $('[name="status"]').bootstrapSwitch({  
+                    onText:"ON",  
+                    offText:"OFF",  
+                    onColor:"info",  
+                    offColor:"info",  
+                    size:"small",  
+                    onSwitchChange:function(event,state){  
+                        if(state==true){  
+                            $(this).val("0");
+                        }else{  
+                            $(this).val("1");  
+                        }  
+                        console.log($(this).data("id"));
+                    }  
+                })
+            }
+		});										
+        //按钮点击弹窗
+        function showBox(dom,index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $("."+dom);
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() -$box.height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg").delay("100").fadeIn();
+            $("."+dom).delay("100").fadeIn();
+        };
+
+        function accountContClose(dom,contbg){ 
+            if(contbg!=null){
+                $("."+contbg).delay("100").fadeOut();
+            }                                    
+            $("."+dom).delay("100").fadeOut();
+        };
+        $('[name="status"]').bootstrapSwitch({  
+            onText:"ON",  
+            offText:"OFF",  
+            onColor:"info",  
+            offColor:"info",  
+            size:"small",  
+            onSwitchChange:function(event,state){  
+                if(state==true){  
+                    $(this).val("0");
+                }else{  
+                    $(this).val("1");  
+                }  
+                console.log($(this).data("id"));
+            }  
+        })
+    </script>
+</body>
+
+</html>

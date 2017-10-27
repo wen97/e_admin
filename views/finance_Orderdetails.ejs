@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>订单明细</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    订单明细
+                </div>
+            </div>
+            <div class="debtManagementNav">
+                <div class="debtManagementExport inlineB" onclick ="$('#reportTable').tableExport({ type: 'excel', escape: 'false'})">
+                    导出
+                </div>
+                <span class="mgl10">订单时间类型：</span>
+                <select class="debtManagementSelect width138 col666 mgl0">
+                    <option value="0">全部</option>
+                    <option value="1">发货时间</option>
+                    <option value="2">下单时间</option>
+                </select>
+                <input placeholder="开始日期（年/月/日/时）" class="managementDate width154" id="managementStart" />
+                    <span class="mgl10">——</span>
+                <input placeholder="结束日期（年/月/日/时）" class="managementDate width154" id="managementEnd" />
+                <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate width154" /> 
+                <div class="debtManagementSearch inlineB width92 fr">
+                    查询
+                </div>
+            </div>
+            <ul class="FlowdetailNav mgt30">
+                <li class="tradingClick" data-type="0"><span>全部</span></li>
+                <li data-type="1"><span>待付款</span></li>
+                <li data-type="2"><span>待发货</span></li>
+                <li data-type="3"><span>已发货</span></li>
+                <li data-type="4"><span>已完成</span></li>
+                <li data-type="5"><span>已关闭</span></li>
+            </ul>
+            <div class="transferTableWarp">
+                <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable">
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script src="js/plugins/tableExport.js"></script>
+    <script src="js/plugins/jquery.base64.js"></script>
+
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+
+    //手动制造30条数据
+	var datas  = [];
+	for(var i=0;i<300;i++){
+		datas[i]={"a":"4251033325125"+i,"b":"海尔数码相机ss","c":"1","d":"500.00","e":"100.00","f":"待付款","g":"2017-12-14 10:00","h":"2017-22-14 10:00"}
+	}
+
+
+		$('#reportTable').bootstrapTable({
+			method: 'get',
+			cache: false,
+			striped: false,
+			pagination: true,
+			pageSize: 15,
+            height:640,
+			pageNumber:1,
+			pageList: [15],
+			showColumns: false,
+			showRefresh: false,
+			showExport: false,
+			search: false,
+			clickToSelect: false,
+			sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+			columns: 
+			[
+				{field:"a",title:"订单号",align:"center",valign:"middle"},
+				{field:"b",title:"商品标题",align:"center",valign:"middle"},
+                {field:"c",title:"数量",align:"center",valign:"middle"},
+                {field:"d",title:"金额(元)",align:"center",valign:"middle"},
+                {field:"e",title:"金额(币)",align:"center",valign:"middle"},
+                {field:"f",title:"订单状态",align:"center",valign:"middle"},
+                {field:"g",title:"下单时间",align:"center",valign:"middle"},
+                {field:"h",title:"发货时间",align:"center",valign:"middle"}
+			],
+			data:datas,
+		});										
+        //订单状态点击
+        $(".FlowdetailNav li").click(function(){
+            $(this).addClass("tradingClick").siblings().removeClass("tradingClick");
+            console.log($(this).data("type"));
+        })
+    </script>
+</body>
+
+</html>

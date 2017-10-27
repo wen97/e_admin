@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>债行配额</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    待结算
+                </div>
+                <div class="debtManagementTitle">
+                    已结算
+                </div>
+            </div>
+            <div>
+                <div class="mainContWarp animated fadeIn">
+                    <div class="debtManagementNav">
+                        <div class="debtManagementExport inlineB">
+                            导出
+                        </div>
+                        <select class="debtManagementSelect width160">
+                            <option value="">请选择级别</option>
+                            <option value="">总级行</option>
+                            <option value="">省级行</option>
+                        </select>
+                        <input placeholder="开始日期（年/月/日/时）" class="managementDate" id="managementStart" />
+                            <span class="mgl10">至</span>
+                        <input placeholder="结束日期（年/月/日/时）" class="managementDate" id="managementEnd" />
+                        <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate" /> 
+                        <div class="debtManagementSearch inlineB width92 fr">
+                            查询
+                        </div>
+                    </div>
+                    <div class="ManagementTableWarp">
+                        <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable1">
+                        </table>
+                    </div>
+                    <div class="accountCont">
+                        <div class="accountContHead">
+                            <span>结算明细</span>
+                            <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose()"/>
+                        </div>
+                        <div class="accountContMain">
+                            <img src="img/userImg.png" class="accountUser"/>
+                            <div class="accountContMainDes">
+                                <p class="fn16">收款</p>
+                                <p>对方：北京科技发展有限公司</p>
+                                <p>开户银行：招商银行</p>
+                                <p>开户支行：北京市还定区支行</p>
+                                <p>银行卡号：6524 5596 5584 578</p>
+                                <p>流水号：569845451265875481496</p>
+                            </div>
+                            <img src="img/pendingPng.png" class="fr" />
+                        </div>
+                        <div class="accountTabCont">
+                            <span class="colb2b">时间：2017/07/26 10:46</span>
+                            <span class="fr colb2b">单位：元</span>
+                            <table cellspacing="1" class="accountTable">
+                                <tr>
+                                    <td>金额</td>
+                                    <td>费率</td>
+                                    <td>实付金额</td>
+                                </tr>
+                                <tr>
+                                    <td>150.00</td>
+                                    <td>0</td>
+                                    <td>150.00</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <a class="accountAchieve">完成</a>
+                    </div>
+                    <div class="accountContBg"></div>
+                </div> 
+                <div class="mainContWarp animated fadeIn" style="display:none">
+                    <div class="debtManagementNav">
+                        <div class="debtManagementExport inlineB">
+                            导出
+                        </div>
+                        <select class="debtManagementSelect">
+                            <option value="">请选择级别</option>
+                            <option value="">总级行</option>
+                            <option value="">省级行</option>
+                        </select>
+                        <input placeholder="开始日期（年/月/日/时）" class="managementDate" id="managementStart" />
+                            <span class="mgl10">至</span>
+                        <input placeholder="结束日期（年/月/日/时）" class="managementDate" id="managementEnd" />
+                        <input type="text" id="keywordSearch" placeholder="请输入关键词搜索" class="managementDate" /> 
+                        <div class="debtManagementSearch inlineB width92 fr">
+                            查询
+                        </div>
+                    </div>
+                    <div class="ManagementTableWarp">
+                        <table class="debtManagementTable" border="0" cellspacing="1" id="reportTable2">
+                        </table>
+                    </div>
+                </div>     
+            </div>    
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/plugins/laydate/laydate.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap-table.min.js"></script>
+    <script src="js/bootstrap-table-zh-CN.min.js"></script>
+    <script>
+        //日期范围限制
+        var start = {
+            elem: '#managementStart',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            max: '2099-06-16 23:59:59', //最大日期
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                end.min = datas; //开始日选好后，重置结束日的最小日期
+                end.start = datas //将结束日的初始值设定为开始日
+            }
+        };
+        var end = {
+            elem: '#managementEnd',
+            format: 'YYYY/MM/DD hh:mm:ss',
+            min: laydate.now(),
+            max: '2099-06-16 23:59:59',
+            istime: true,
+            istoday: false,
+            choose: function (datas) {
+                start.max = datas; //结束日选好后，重置开始日的最大日期
+            }
+        };
+        laydate(start);
+        laydate(end);
+
+        //结算按钮点击弹窗
+        function showAccountCont(){                                   
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $('.accountCont');
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() - $(".accountCont").height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg,.accountCont").delay("100").fadeIn();
+        }
+
+        function accountContClose(){                                      
+            $(".accountContBg,.accountCont").delay("100").fadeOut();
+        }
+
+        //手动制造30条数据
+        var datas  = [];
+        for(var i=0;i<300;i++){
+            datas[i]={"a":"总级行"+i,"b":"中国总行","c":"融合天下资产管理有限公司","d":"0571-8888888","e":"张小丫","f":"电话","g":"2017/07/28"}
+        }
+
+        $('#reportTable1').bootstrapTable({
+            method: 'get',
+            cache: false,
+            striped: false,
+            pagination: true,
+            pageSize: 15,
+            height:640,
+            pageNumber:1,
+            pageList: [15],
+            showColumns: false,
+            showRefresh: false,
+            showExport: false,
+            exportTypes: ['csv','txt','xml'],
+            search: false,
+            clickToSelect: false,
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+            columns: 
+            [
+                {field:"a",title:"债行级别",align:"center",valign:"middle"},
+                {field:"b",title:"所属债行",align:"center",valign:"middle"},
+                {field:"c",title:"单位名称",align:"center",valign:"middle"},
+                {field:"d",title:"单位座机",align:"center",valign:"middle"},
+                {field:"e",title:"联系人",align:"center",valign:"middle"},
+                {field:"f",title:"电话",align:"center",valign:"middle"},
+                {field:"g",title:"创建时间",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '状态',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a onclick="del(\''+ row.id +'\')">关闭</a>';
+                        return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var e = '<a class="accountBtn" onclick="showAccountCont()">结算</a> ';  
+                        return e;
+                    }
+                }
+            ],
+            data:datas,
+        });	
+        $('#reportTable2').bootstrapTable({
+            method: 'get',
+            cache: false,
+            striped: false,
+            pagination: true,
+            pageSize: 15,
+            height:640,
+            pageNumber:1,
+            pageList: [15],
+            showColumns: false,
+            showRefresh: false,
+            showExport: false,
+            exportTypes: ['csv','txt','xml'],
+            search: false,
+            clickToSelect: false,
+            sidePagination: "client",           //分页方式：client客户端分页，server服务端分页（*） 
+            columns: 
+            [
+                {field:"checked",checkbox:true},
+                {field:"a",title:"债行级别",align:"center",valign:"middle"},
+                {field:"b",title:"所属债行",align:"center",valign:"middle"},
+                {field:"c",title:"单位名称",align:"center",valign:"middle"},
+                {field:"d",title:"单位座机",align:"center",valign:"middle"},
+                {field:"e",title:"联系人",align:"center",valign:"middle"},
+                {field:"f",title:"电话",align:"center",valign:"middle"},
+                {field:"g",title:"创建时间",align:"center",valign:"middle"},
+                {
+                    field: 'id',
+                    title: '状态',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var a = '<a onclick="del(\''+ row.id +'\')">关闭</a>';
+                        return a;
+                    }
+                },
+                {
+                    field: 'id',
+                    title: '操作',
+                    align: 'center',
+                    formatter:function(value,row,index){
+                        var e = '<a>删除</a> ';  
+                        return e;
+                    }
+                }
+            ],
+            data:datas,
+        });					
+
+    </script>
+</body>
+
+</html>

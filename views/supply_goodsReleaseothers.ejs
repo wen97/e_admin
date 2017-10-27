@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+
+    <title>商品发布-其他</title>
+
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/upload.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/summernote.css" rel="stylesheet">
+    <link href="css/summernote-bs3.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight wrapperPdl">
+        <div class="debtManagement">
+            <div class="debtManagementHead">
+                <div class="debtManagementTitle TitleActive">
+                    商品发布
+                </div>
+            </div>
+            <div class="claimdetailMain mgt40 mgl30">
+                <div class="claimdetailMainHead">
+                    *基本信息
+                </div>
+                <div class="claimdetailMainDes">
+                    <p class="mgt15">
+                        <span class="supplyDesc">*商品图：</span>
+                        <div id="T_upload"></div>
+                    </p>
+                    <p class="mgt30">
+                        <span class="supplyDesc">*商品类目：</span>
+                        <select class="debtManagementSelect mgl20">
+                            <option value="">请选择商品类目</option>
+                            <option value="0">家用</option>
+                            <option value="1">滋补养生</option>
+                            <option value="2">酒水饮品</option>
+                        </select>
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*商品标题：</span>
+                        <input type="text" placeholder="请输入商品标题" class="createDebtIpt width318" maxlength="30">
+                        <p class="colff0 mgl158 mgt10">注：商品标题限制30个字（允许英文字母/数字/汉字/特殊字符）</p>
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*副标题：</span>
+                        <textarea class="createDebtIpt width318 goodsTextarea" maxlength="60"></textarea>
+                        <p class="colff0 mgl158 mgt10">注：副标题可以编写商品特点/优势/详细参数，限制60字（允许英文字母/数字/汉字/特殊字符）</p>
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*出售数量：</span>
+                        <input type="text" placeholder="请输入出售数量" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*e债币（币）：</span>
+                        <input type="text" placeholder="请输入e债币" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*现金价（元）：</span>
+                        <input type="text" placeholder="请输入现金价" class="createDebtIpt width318">
+                    </p>
+                    <p class="mgt15">
+                        <span class="supplyDesc">*仓储地址：</span>
+                        <select id="localProvince" class="createDebtIpt width152" style="color: rgb(193, 193, 193);"><option value="" style="color: rgb(51, 51, 51);">请选择省份</option><option value="北京市" style="color: rgb(51, 51, 51);">北京市</option><option value="广东省" style="color: rgb(51, 51, 51);">广东省</option><option value="山东省" style="color: rgb(51, 51, 51);">山东省</option><option value="江苏省" style="color: rgb(51, 51, 51);">江苏省</option><option value="河南省" style="color: rgb(51, 51, 51);">河南省</option><option value="上海市" style="color: rgb(51, 51, 51);">上海市</option><option value="河北省" style="color: rgb(51, 51, 51);">河北省</option><option value="浙江省" style="color: rgb(51, 51, 51);">浙江省</option><option value="香港特别行政区" style="color: rgb(51, 51, 51);">香港特别行政区</option><option value="陕西省" style="color: rgb(51, 51, 51);">陕西省</option><option value="湖南省" style="color: rgb(51, 51, 51);">湖南省</option><option value="重庆市" style="color: rgb(51, 51, 51);">重庆市</option><option value="福建省" style="color: rgb(51, 51, 51);">福建省</option><option value="天津市" style="color: rgb(51, 51, 51);">天津市</option><option value="云南省" style="color: rgb(51, 51, 51);">云南省</option><option value="四川省" style="color: rgb(51, 51, 51);">四川省</option><option value="广西壮族自治区" style="color: rgb(51, 51, 51);">广西壮族自治区</option><option value="安徽省" style="color: rgb(51, 51, 51);">安徽省</option><option value="海南省" style="color: rgb(51, 51, 51);">海南省</option><option value="江西省" style="color: rgb(51, 51, 51);">江西省</option><option value="湖北省" style="color: rgb(51, 51, 51);">湖北省</option><option value="山西省" style="color: rgb(51, 51, 51);">山西省</option><option value="辽宁省" style="color: rgb(51, 51, 51);">辽宁省</option><option value="台湾省" style="color: rgb(51, 51, 51);">台湾省</option><option value="黑龙江" style="color: rgb(51, 51, 51);">黑龙江</option><option value="内蒙古自治区" style="color: rgb(51, 51, 51);">内蒙古自治区</option><option value="澳门特别行政区" style="color: rgb(51, 51, 51);">澳门特别行政区</option><option value="贵州省" style="color: rgb(51, 51, 51);">贵州省</option><option value="甘肃省" style="color: rgb(51, 51, 51);">甘肃省</option><option value="青海省" style="color: rgb(51, 51, 51);">青海省</option><option value="新疆维吾尔自治区" style="color: rgb(51, 51, 51);">新疆维吾尔自治区</option><option value="西藏区" style="color: rgb(51, 51, 51);">西藏区</option><option value="吉林省" style="color: rgb(51, 51, 51);">吉林省</option><option value="宁夏回族自治区" style="color: rgb(51, 51, 51);">宁夏回族自治区</option></select>  
+                        <select id="localCity" class="createDebtIpt width152 mgl10" style="color: rgb(193, 193, 193);"><option value="" style="color:#333;">请选择城市</option></select>
+                        <input type="text" class="createDebtIpt width385 mgl10" placeholder="请输入详细地址">
+                    </p>
+                </div>
+                <div class="claimdetailMainHead">
+                    *产品详情
+                </div>
+                <a class="claimdetailBtn" onclick="del()">移动端上传说明</a>
+                <div class="claimdetailMainDes width820 borderdee">
+                    <div class="summernote">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="claimdetailFooter mgl280 mgb40">
+                <a class="btnReject fl">重置</a>
+                <a class="btnPass fr" onclick="Release()">发布</a>
+            </div>
+        </div>
+        <div class="claimdetailNotcie">
+            <div class="delContHead bg66c">
+                <span class="mgl20">移动端上传说明</span>
+                <img class="accountContClose" src="img/accountContClose.png" onclick="accountContClose()"/>
+            </div>
+            <div class="detailNotcieCont">
+                <p>一、基本要求</p>
+                <p>1、手机详情总体大小：图片*文字，图片不超过20张，文字不超过500字；</p>
+                <p>建议：所有图片都是本宝贝相关的图片。</p>
+                <p class="mgt20">二、图片大小</p>
+                <p>1、建议使用宽度480~620像素，高度小于等于960像素的图片；</p>
+                <p>2、格式为：JPG\JEPG\GIF\PNG；举例：可以上传一张宽度为480，高度为960像素，格式为JPG的图片。</p>
+                <p class="mgt20">三、文字要求</p>
+                <p>1、每次插入文字不能超过500个字，标点、特殊字符按照一个字计算；</p>
+                <p>2、请手动输入文字，不要复制粘贴网页上的文字，防止出现乱码；</p>
+                <p>3、以下特殊字符"<"、">"、"\"会被替换为空。</p>
+                <p>建议：不要添加太多文字，这样看起来更清晰。</p>
+            </div>
+        </div>
+        <div class="accountContBg"></div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/plugins/T_upload.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/summernote.min.js"></script>
+    <script src="js/plugins/summernote-zh-CN.js"></script>
+    <script>
+        $(function() {
+			$.Tupload.init({
+				fileNum: 5, // 上传文件数量
+				divId: "T_upload", // div  id
+				accept: "image/jpeg,image/x-png", // 上传文件的类型
+				fileSize  :25600000,     // 上传文件的大小
+				onSuccess: function(data, i) {
+                    // function doit(){         已经上传图片数量
+                    //     console.log(parseInt($("#fileNum").val()))
+                    // }
+                },
+                onDelete: function(i) {
+					
+				}
+            });
+            $('.summernote').summernote({
+                lang: 'zh-CN'
+            });
+        })
+        
+        //关闭按钮点击弹窗
+        function del(index){
+            $(".accountContBg").css({
+                    height: $(document).height()
+            });
+            var $box = $('.claimdetailNotcie');
+            $box.css({
+                left: ($("body").width() - $box.width()) / 2 - 20 + "px",
+                top: ($(window).height() - $(".claimdetailNotcie").height()) / 2 + $(window).scrollTop() + "px",
+            });
+            $(".accountContBg").css({"background-color":"#000","opacity":"0.5"});
+            $(".accountContBg,.claimdetailNotcie").delay("100").fadeIn();
+        }
+
+        function accountContClose(){                                      
+            $(".accountContBg,.claimdetailNotcie").delay("100").fadeOut();
+        }
+        function Release(){
+            var str= $('.summernote').code(); 
+            console.log(str)
+        }
+    </script>
+</body>
+
+</html>
